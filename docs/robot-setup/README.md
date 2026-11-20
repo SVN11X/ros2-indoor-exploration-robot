@@ -2,9 +2,7 @@
 
 Versión en inglés: [README.en.md](README.en.md)
 
-Este documento detalla los pasos para configurar las credenciales, clonar el repositorio privado y el flujo de trabajo para subir o bajar cambios.
-
-> 🔒 **IMPORTANTE:** Al ser un repositorio privado, tu contraseña habitual de GitHub **NO funcionará**. Debes usar un **Personal Access Token**.
+Este documento detalla los pasos para instalar Git, clonar el repositorio y el flujo de trabajo para subir o bajar cambios.
 
 ---
 
@@ -16,48 +14,30 @@ Si no tienes Git instalado:
 
 ---
 
-## 🔑 2. Generar tu Token de Acceso (Obligatorio)
+## ⚙️ 2. Configurar tu Identidad
 
-Necesitas una "contraseña especial" para la terminal:
-
-1.  Entra a tu cuenta de GitHub > **Settings** > **Developer settings**.
-2.  Selecciona **Personal access tokens** > **Tokens (classic)**.
-3.  Haz clic en **Generate new token (classic)**.
-4.  En "Scopes", marca la casilla **`repo`** (control total de repos privados).
-5.  **COPIA** ese código largo (empieza por `ghp_...`). *Guárdalo bien.*
-
----
-
-## 🔐 3. Configuración de Credenciales
-
-Configura Git para que recuerde tu token.
-
-### 🪟 En Windows
-Windows suele usar el "Credential Manager". Al clonar o subir cambios, si sale una ventana emergente, elige **"Token"** y pega tu código `ghp_...`.
-
-### 🐧 En Ubuntu (Linux)
-Ejecuta esto en la terminal para guardar tus datos y no escribirlos siempre:
+Git guarda tu nombre y correo en cada commit. Ejecuta esto una vez:
 
 ```bash
 git config --global user.name "TuUsuarioGitHub"
 git config --global user.email "tu_email@ejemplo.com"
-git config --global credential.helper store
 ```
 
 ---
 
-## 🚀 4. Clonar el Repositorio (Primera vez)
+## 🚀 3. Clonar el Repositorio (Primera vez)
+
+El repositorio es público, así que clonarlo no pide credenciales. Instala antes Git LFS, porque los archivos grandes de las sesiones de mapeo están ahí. Los scripts esperan el repositorio en `~/tesis_black_robot`:
 
 ```bash
-git clone https://github.com/SVN11X/tesis_black_robot.git
+sudo apt install git-lfs
+git lfs install
+git clone https://github.com/SVN11X/ros2-indoor-exploration-robot.git ~/tesis_black_robot
 ```
-
-* **Username:** Tu usuario.
-* **Password:** Pega tu **Token** (En Linux no se verán asteriscos al pegar, es normal).
 
 ---
 
-## 🔄 5. Flujo de Trabajo Diario
+## 🔄 4. Flujo de Trabajo Diario
 
 Estos son los comandos que usarás cada vez que trabajes en el proyecto. Funcionan igual en Windows y Ubuntu.
 
