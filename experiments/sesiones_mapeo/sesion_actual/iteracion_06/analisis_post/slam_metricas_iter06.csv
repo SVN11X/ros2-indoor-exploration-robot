@@ -1,0 +1,11 @@
+indicador,valor,unidad
+modo,real,
+distancia_odom,4.066,m
+duracion,2.30,min
+cobertura,53.4,%
+celdas_libres,1391,celdas
+celdas_desconocidas,1213,celdas
+celdas_ocupadas,366,celdas
+area_libre,3.478,m2
+resolucion,0.05000000074505806,m/celda
+nodos_slam,---,

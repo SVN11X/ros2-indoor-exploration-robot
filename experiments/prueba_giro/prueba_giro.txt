@@ -1,0 +1,48 @@
+# ── RASPBERRY PI (SSH) ──────────────────────────────────────
+# Ejecutar con: bash ~/robot_ws/launch_robot_all.sh
+# O manualmente:
+cd robot_ws
+colcon build --symlink-install --executor sequential
+source install/setup.bash
+ros2 launch articubot_one launch_robot.launch.py
+ros2 launch articubot_one rplidar.launch.py
+
+# ── PC (ESTACIÓN DE TRABAJO) ────────────────────────────────
+# Verificar comunicación DDS:
+ros2 topic echo /odom --once
+# ── RASPBERRY PI (SSH) ──────────────────────────────────────
+# Ejecutar con: bash ~/robot_ws/launch_robot_all.sh
+# O manualmente:
+cd robot_ws
+colcon build --symlink-install --executor sequential
+source install/setup.bash
+ros2 launch articubot_one launch_robot.launch.py
+ros2 launch articubot_one rplidar.launch.py
+
+# ── PC (ESTACIÓN DE TRABAJO) ────────────────────────────────
+# Verificar comunicación DDS:
+ros2 topic echo /odom --once
+
+# Verificar orientación actual (quaternion → yaw):
+ros2 topic echo /odom/pose/pose/orientation --once
+
+# Orquestador completo (recomendado):
+bash run_prueba_giro.sh
+
+# O manual prueba a prueba:
+source /opt/ros/foxy/setup.bash
+source ~/tesis_black_robot/install/setup.bash
+python3 prueba_giro.py --prueba 1
+ros2 bag record /odom /tf -o prueba_giro_1
+
+# Verificar orientación actual (quaternion → yaw):
+ros2 topic echo /odom/pose/pose/orientation --once
+
+# Orquestador completo (recomendado):
+bash run_prueba_giro.sh
+
+# O manual prueba a prueba:
+source /opt/ros/foxy/setup.bash
+source ~/tesis_black_robot/install/setup.bash
+python3 prueba_giro.py --prueba 1
+ros2 bag record /odom /tf -o prueba_giro_1

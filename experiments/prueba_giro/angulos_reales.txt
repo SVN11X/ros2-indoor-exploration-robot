@@ -1,0 +1,7 @@
+# angulos_reales.txt — ángulo real medido físicamente (grados)
+# Generado por run_prueba_giro.sh — vie 20 mar 2026 14:52:41 -03
+355.7
+340
+380
+370
+356

@@ -1,0 +1,30 @@
+# ── RASPBERRY PI (SSH) ──────────────────────────────────────
+# Ejecutar con: bash ~/robot_ws/launch_robot_all.sh
+# O manualmente:
+cd robot_ws
+colcon build --symlink-install --executor sequential
+source install/setup.bash
+ros2 launch articubot_one launch_robot.launch.py
+ros2 launch articubot_one rplidar.launch.py
+
+# ── PC (ESTACIÓN DE TRABAJO) ────────────────────────────────
+# Orquestador completo (recomendado):
+bash run_verificacion_tf.sh
+
+# O manual paso a paso:
+source /opt/ros/foxy/setup.bash
+source ~/tesis_black_robot/install/setup.bash
+
+# Generar árbol de TF (crea frames_YYYY-MM-DD.pdf):
+ros2 run tf2_tools view_frames
+
+# Convertir PDF a PNG:
+pdftoppm frames*.pdf tf_tree_real -png -r 200
+
+# Verificar frecuencia de /odom (dejar 10 s, esperado ~50 Hz):
+ros2 topic hz /odom
+
+# Verificar transformaciones clave:
+ros2 run tf2_ros tf2_echo odom base_link
+ros2 run tf2_ros tf2_echo base_link laser_frame
+ros2 run tf2_ros tf2_echo base_link base_footprint

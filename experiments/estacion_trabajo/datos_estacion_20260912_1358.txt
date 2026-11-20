@@ -1,0 +1,37 @@
+----------------------------------------------------------
+  DATOS DE LA ESTACION DE TRABAJO
+  Generado el 12-09-2026 13:58
+----------------------------------------------------------
+Sistema operativo:           Ubuntu 20.04.6 LTS
+Kernel:                      5.15.0-139-generic (x86_64)
+Procesador:                  Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz
+Nucleos fisicos:             4
+Hilos logicos:               8
+Frecuencia maxima:           4.90 GHz
+Memoria RAM real:            31.0 GiB
+Memoria RAM nominal:         32 GB
+----------------------------------------------------------
+Distribucion ROS 2:          foxy
+Paquete ros-core:            0.9.2-1focal.20230527.064030
+RMW en uso:                  rmw_cyclonedds_cpp
+ROS_DOMAIN_ID:               0
+Gazebo Classic:              11.11.0
+----------------------------------------------------------
+slam_toolbox:                2.4.1-1focal.20230606.053256
+nav2_bringup:                0.4.7-1focal.20230606.055136
+ros2_control:                0.11.0-1focal.20230527.055540
+gazebo_ros_pkgs:             3.5.3-1focal.20230606.051339
+----------------------------------------------------------
+
+TEXTO LISTO PARA PEGAR EN EL CAPITULO DE RESULTADOS
+----------------------------------------------------------
+La estacion de trabajo utiliza Ubuntu 20.04.6 LTS, con procesador Intel(R) Core(TM) i7-10610U CPU @ 1.80GHz
+de 4 nucleos fisicos y 32 GB de memoria RAM.
+La simulacion se ejecuto en Gazebo Classic 11.11.0 sobre ROS 2 foxy.
+----------------------------------------------------------
+
+Si algun campo dice 'no detectado', ejecutar el comando manualmente:
+  gazebo --version        (version de Gazebo)
+  lscpu | head -20        (procesador)
+  free -h                 (memoria RAM)
+  lsb_release -a          (sistema operativo)

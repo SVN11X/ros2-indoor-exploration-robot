@@ -1,0 +1,185 @@
+kappa_T (33 ms) = 310.42 ticks por periodo para 1 m/s; kappa_fw = 313.56
+
+===== Identificacion: el costo no cambia para Ld < T_cap =====
+  izquierda: max |respuesta(Ld) - respuesta(0)| = Ld=0.0001: 0.00e+00, Ld=0.0692: 0.00e+00, Ld=0.0845: 0.00e+00, Ld=0.0990: 0.00e+00, Ld=0.1000: 3.97e-02
+  derecha: max |respuesta(Ld) - respuesta(0)| = Ld=0.0001: 0.00e+00, Ld=0.0692: 0.00e+00, Ld=0.0845: 0.00e+00, Ld=0.0990: 0.00e+00, Ld=0.1000: 3.65e-02
+
+===== Verificacion de la discretizacion FOPDT (pulso unitario de PWM) =====
+  izquierda, Ld = 0.0001 s: max |P(z) - modelo continuo| = 5.59e-06 ticks por periodo
+  izquierda, Ld = 0.1000 s: max |P(z) - modelo continuo| = 1.71e-06 ticks por periodo
+  derecha, Ld = 0.0692 s: max |P(z) - modelo continuo| = 5.21e-06 ticks por periodo
+  derecha, Ld = 0.1000 s: max |P(z) - modelo continuo| = 1.56e-06 ticks por periodo
+
+===== Rueda izquierda =====
+K = 0.2834 (ticks por periodo)/PWM, a = 0.90459, gamma = 0.95150, retardo relativo Ld/(Ld+tau) = 0.000 (cota 0.233)
+PI incremental equivalente: K = Kd/Ko = 0.4060 PWM por tick/frame, K h/Ti = Kp/Ko = 0.3200, Ti = 41.9 ms
+  [definitivas, sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9473; polos: [0.9443+0.0749j 0.9443-0.0749j 0.006 +0.j     0.    +0.j    ]
+    wc = 2.232 rad/s, T*wc = 0.0736, PM = 56.9 deg, DM = 0.445 s, w180 = 39.11 rad/s, GM = 87.9 (38.9 dB), Ms = 1.3547
+    retardo entero adicional maximo estable: 13 periodos (0.429 s); retardo total critico = 0.445 s
+  [definitivas, sin retardo, Ld = 0 (modelo efectivo, n_d = 0), Ki lineal] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9950; polos: [0.995 +0.j     0.9468+0.0732j 0.9468-0.0732j 0.006 +0.j    ]
+    wc = 2.221 rad/s, T*wc = 0.0733, PM = 53.4 deg, DM = 0.419 s, w180 = 39.08 rad/s, GM = 87.9 (38.9 dB), Ms = 1.3910
+    retardo entero adicional maximo estable: 12 periodos (0.396 s); retardo total critico = 0.419 s
+  [definitivas, Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9614; polos: [ 0.9578+0.083j   0.9578-0.083j   0.2992+0.j     -0.0263+0.2825j]
+    wc = 2.232 rad/s, T*wc = 0.0736, PM = 44.1 deg, DM = 0.345 s, w180 = 6.06 rad/s, GM = 4.7 (13.4 dB), Ms = 1.7752
+    retardo entero adicional maximo estable: 10 periodos (0.330 s); retardo total critico = 0.445 s
+  [definitivas, Ld = T_cap (cota superior), Ki lineal] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9950; polos: [0.995 +0.j     0.9602+0.0811j 0.9602-0.0811j 0.2994+0.j    ]
+    wc = 2.221 rad/s, T*wc = 0.0733, PM = 40.7 deg, DM = 0.319 s, w180 = 5.91 rad/s, GM = 4.5 (13.1 dB), Ms = 1.8523
+    retardo entero adicional maximo estable: 9 periodos (0.297 s); retardo total critico = 0.419 s
+  [definitivas, Ld del optimizador (solo referencia)] Ld = 0.0001 s (d = 0, delta = 0.003)
+    polos dominantes |max| = 0.9473; polos: [ 0.9443+0.0749j  0.9443-0.0749j  0.0061+0.j     -0.    +0.j    ]
+    wc = 2.232 rad/s, T*wc = 0.0736, PM = 56.9 deg, DM = 0.445 s, w180 = 38.92 rad/s, GM = 87.2 (38.8 dB), Ms = 1.3550
+    retardo entero adicional maximo estable: 13 periodos (0.429 s); retardo total critico = 0.445 s
+  barrido de Ld entre 0 y T_cap (definitivas): margenes monotonos = True
+    Ld = 0.000 s: PM = 56.9 deg, GM = 38.9 dB, DM = 0.445 s, Ms = 1.355, polo |max| = 0.9473
+    Ld = 0.010 s: PM = 55.6 deg, GM = 33.9 dB, DM = 0.435 s, Ms = 1.388, polo |max| = 0.9485
+    Ld = 0.020 s: PM = 54.4 deg, GM = 29.9 dB, DM = 0.425 s, Ms = 1.422, polo |max| = 0.9498
+    Ld = 0.030 s: PM = 53.1 deg, GM = 26.3 dB, DM = 0.415 s, Ms = 1.459, polo |max| = 0.9511
+    Ld = 0.040 s: PM = 51.8 deg, GM = 23.2 dB, DM = 0.405 s, Ms = 1.497, polo |max| = 0.9525
+    Ld = 0.050 s: PM = 50.5 deg, GM = 20.8 dB, DM = 0.395 s, Ms = 1.537, polo |max| = 0.9539
+    Ld = 0.060 s: PM = 49.2 deg, GM = 18.8 dB, DM = 0.385 s, Ms = 1.580, polo |max| = 0.9553
+    Ld = 0.070 s: PM = 48.0 deg, GM = 17.1 dB, DM = 0.375 s, Ms = 1.625, polo |max| = 0.9568
+    Ld = 0.080 s: PM = 46.7 deg, GM = 15.7 dB, DM = 0.365 s, Ms = 1.672, polo |max| = 0.9583
+    Ld = 0.090 s: PM = 45.4 deg, GM = 14.4 dB, DM = 0.355 s, Ms = 1.722, polo |max| = 0.9599
+    Ld = 0.100 s: PM = 44.1 deg, GM = 13.4 dB, DM = 0.345 s, Ms = 1.775, polo |max| = 0.9614
+  barrido de Ld entre 0 y T_cap (definitivas, Ki lineal): margenes monotonos = True
+    Ld = 0.000 s: PM = 53.4 deg, GM = 38.9 dB, DM = 0.419 s, Ms = 1.391, polo |max| = 0.9950
+    Ld = 0.010 s: PM = 52.1 deg, GM = 33.9 dB, DM = 0.409 s, Ms = 1.427, polo |max| = 0.9950
+    Ld = 0.020 s: PM = 50.8 deg, GM = 29.8 dB, DM = 0.399 s, Ms = 1.464, polo |max| = 0.9950
+    Ld = 0.030 s: PM = 49.6 deg, GM = 26.2 dB, DM = 0.389 s, Ms = 1.504, polo |max| = 0.9950
+    Ld = 0.040 s: PM = 48.3 deg, GM = 23.1 dB, DM = 0.379 s, Ms = 1.545, polo |max| = 0.9950
+    Ld = 0.050 s: PM = 47.0 deg, GM = 20.6 dB, DM = 0.369 s, Ms = 1.590, polo |max| = 0.9950
+    Ld = 0.060 s: PM = 45.8 deg, GM = 18.5 dB, DM = 0.359 s, Ms = 1.636, polo |max| = 0.9950
+    Ld = 0.070 s: PM = 44.5 deg, GM = 16.8 dB, DM = 0.349 s, Ms = 1.685, polo |max| = 0.9950
+    Ld = 0.080 s: PM = 43.2 deg, GM = 15.4 dB, DM = 0.339 s, Ms = 1.738, polo |max| = 0.9950
+    Ld = 0.090 s: PM = 41.9 deg, GM = 14.2 dB, DM = 0.329 s, Ms = 1.793, polo |max| = 0.9950
+    Ld = 0.100 s: PM = 40.7 deg, GM = 13.1 dB, DM = 0.319 s, Ms = 1.852, polo |max| = 0.9950
+  [PSO evaluado (Kd=25), sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9453; polos: [0.9434+0.06j 0.9434-0.06j 0.0074+0.j   0.    +0.j  ]
+    wc = 1.851 rad/s, T*wc = 0.0611, PM = 63.8 deg, DM = 0.602 s, w180 = 42.85 rad/s, GM = 93.9 (39.5 dB), Ms = 1.2479
+    retardo entero adicional maximo estable: 18 periodos (0.594 s); retardo total critico = 0.602 s
+  [PSO evaluado (Kd=25), Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9557; polos: [ 0.9532+0.0687j  0.9532-0.0687j  0.3316+0.j     -0.0333+0.2937j]
+    wc = 1.851 rad/s, T*wc = 0.0611, PM = 53.2 deg, DM = 0.502 s, w180 = 7.04 rad/s, GM = 7.2 (17.2 dB), Ms = 1.5216
+    retardo entero adicional maximo estable: 15 periodos (0.495 s); retardo total critico = 0.602 s
+  [PSO informado, sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9424; polos: [0.9406+0.0574j 0.9406-0.0574j 0.0104+0.j     0.    +0.j    ]
+    wc = 1.863 rad/s, T*wc = 0.0615, PM = 66.4 deg, DM = 0.622 s, w180 = 44.69 rad/s, GM = 77.2 (37.8 dB), Ms = 1.2010
+    retardo entero adicional maximo estable: 18 periodos (0.594 s); retardo total critico = 0.621 s
+  [PSO informado, Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9519; polos: [ 0.9495+0.0673j  0.9495-0.0673j  0.3734+0.j     -0.0414+0.3159j]
+    wc = 1.863 rad/s, T*wc = 0.0615, PM = 55.7 deg, DM = 0.522 s, w180 = 8.14 rad/s, GM = 8.2 (18.3 dB), Ms = 1.4562
+    retardo entero adicional maximo estable: 15 periodos (0.495 s); retardo total critico = 0.621 s
+  [ganancias por defecto del firmware original (Kp=20, Kd=12, Ki=0), sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9503; polos: [0.9461+0.0892j 0.9461-0.0892j 0.0035+0.j     0.    +0.j    ]
+    wc = 2.613 rad/s, T*wc = 0.0862, PM = 49.8 deg, DM = 0.333 s, w180 = 28.95 rad/s, GM = 62.6 (35.9 dB), Ms = 1.5016
+    retardo entero adicional maximo estable: 10 periodos (0.330 s); retardo total critico = 0.333 s
+  [ganancias por defecto del firmware original (Kp=20, Kd=12, Ki=0), Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9683; polos: [ 0.9636+0.0959j  0.9636-0.0959j -0.0105+0.2556j -0.0105-0.2556j]
+    wc = 2.613 rad/s, T*wc = 0.0862, PM = 34.8 deg, DM = 0.233 s, w180 = 5.33 rad/s, GM = 3.1 (9.8 dB), Ms = 2.1796
+    retardo entero adicional maximo estable: 7 periodos (0.231 s); retardo total critico = 0.333 s
+  banda de insensibilidad (final, Kp=16.0): |e| <= 3 ticks/frame = 0.0096 m/s
+  banda de insensibilidad (PSO, Kp=12.48): |e| <= 4 ticks/frame = 0.0128 m/s
+  error para que Ki*e alcance una unidad: 13.3 ticks/frame
+  firmware bit-exacto, definitivas, sin retardo (zona muerta 0 PWM): yss=0.1329, tr=0.63 s, OS=15.3%
+  firmware bit-exacto, definitivas, sin retardo (zona muerta 40 PWM): yss=0.1340, tr=0.53 s, OS=20.2%
+
+===== Rueda derecha =====
+K = 0.2763 (ticks por periodo)/PWM, a = 0.90965, gamma = 0.95411, retardo relativo Ld/(Ld+tau) = 0.166 (cota 0.223)
+PI incremental equivalente: K = Kd/Ko = 0.4010 PWM por tick/frame, K h/Ti = Kp/Ko = 0.3284, Ti = 40.3 ms
+  [definitivas, sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9504; polos: [0.9475+0.074j 0.9475-0.074j 0.0055+0.j    0.    +0.j   ]
+    wc = 2.198 rad/s, T*wc = 0.0725, PM = 55.5 deg, DM = 0.441 s, w180 = 38.53 rad/s, GM = 93.1 (39.4 dB), Ms = 1.3774
+    retardo entero adicional maximo estable: 13 periodos (0.429 s); retardo total critico = 0.441 s
+  [definitivas, Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9637; polos: [ 0.9603+0.0813j  0.9603-0.0813j  0.2904+0.j     -0.0244+0.2761j]
+    wc = 2.198 rad/s, T*wc = 0.0725, PM = 42.9 deg, DM = 0.341 s, w180 = 5.85 rad/s, GM = 4.6 (13.3 dB), Ms = 1.8077
+    retardo entero adicional maximo estable: 10 periodos (0.330 s); retardo total critico = 0.441 s
+  [definitivas, Ld del optimizador (solo referencia)] Ld = 0.0692 s (d = 2, delta = 0.097)
+    polos dominantes |max| = 0.9593; polos: [ 0.956 +0.0797j  0.956 -0.0797j  0.1973+0.j     -0.096 +0.1503j]
+    wc = 2.198 rad/s, T*wc = 0.0725, PM = 46.8 deg, DM = 0.372 s, w180 = 7.53 rad/s, GM = 7.1 (17.1 dB), Ms = 1.6498
+    retardo entero adicional maximo estable: 11 periodos (0.363 s); retardo total critico = 0.441 s
+  barrido de Ld entre 0 y T_cap (definitivas): margenes monotonos = True
+    Ld = 0.000 s: PM = 55.5 deg, GM = 39.4 dB, DM = 0.441 s, Ms = 1.377, polo |max| = 0.9504
+    Ld = 0.010 s: PM = 54.3 deg, GM = 34.2 dB, DM = 0.431 s, Ms = 1.411, polo |max| = 0.9515
+    Ld = 0.020 s: PM = 53.0 deg, GM = 30.0 dB, DM = 0.421 s, Ms = 1.447, polo |max| = 0.9528
+    Ld = 0.030 s: PM = 51.7 deg, GM = 26.2 dB, DM = 0.411 s, Ms = 1.484, polo |max| = 0.9540
+    Ld = 0.040 s: PM = 50.5 deg, GM = 23.1 dB, DM = 0.401 s, Ms = 1.523, polo |max| = 0.9553
+    Ld = 0.050 s: PM = 49.2 deg, GM = 20.6 dB, DM = 0.391 s, Ms = 1.564, polo |max| = 0.9567
+    Ld = 0.060 s: PM = 48.0 deg, GM = 18.6 dB, DM = 0.381 s, Ms = 1.608, polo |max| = 0.9580
+    Ld = 0.070 s: PM = 46.7 deg, GM = 17.0 dB, DM = 0.371 s, Ms = 1.654, polo |max| = 0.9594
+    Ld = 0.080 s: PM = 45.4 deg, GM = 15.6 dB, DM = 0.361 s, Ms = 1.702, polo |max| = 0.9609
+    Ld = 0.090 s: PM = 44.2 deg, GM = 14.3 dB, DM = 0.351 s, Ms = 1.753, polo |max| = 0.9623
+    Ld = 0.100 s: PM = 42.9 deg, GM = 13.3 dB, DM = 0.341 s, Ms = 1.808, polo |max| = 0.9637
+  [PSO evaluado (Kd=25), sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9482; polos: [0.947 +0.0476j 0.947 -0.0476j 0.0068+0.j     0.    +0.j    ]
+    wc = 1.512 rad/s, T*wc = 0.0499, PM = 67.8 deg, DM = 0.783 s, w180 = 43.96 rad/s, GM = 111.0 (40.9 dB), Ms = 1.2011
+    retardo entero adicional maximo estable: 23 periodos (0.759 s); retardo total critico = 0.782 s
+  [PSO evaluado (Kd=25), Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9555; polos: [ 0.9539+0.0553j  0.9539-0.0553j  0.3291+0.j     -0.0332+0.2866j]
+    wc = 1.512 rad/s, T*wc = 0.0499, PM = 59.1 deg, DM = 0.683 s, w180 = 7.54 rad/s, GM = 10.2 (20.1 dB), Ms = 1.3989
+    retardo entero adicional maximo estable: 20 periodos (0.660 s); retardo total critico = 0.782 s
+  [PSO informado, sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9449; polos: [0.9438+0.044j 0.9438-0.044j 0.0101+0.j    0.    +0.j   ]
+    wc = 1.525 rad/s, T*wc = 0.0503, PM = 70.9 deg, DM = 0.811 s, w180 = 45.69 rad/s, GM = 85.4 (38.6 dB), Ms = 1.1497
+    retardo entero adicional maximo estable: 24 periodos (0.792 s); retardo total critico = 0.811 s
+  [PSO informado, Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9512; polos: [ 0.9497+0.0529j  0.9497-0.0529j  0.3767+0.j     -0.042 +0.3126j]
+    wc = 1.525 rad/s, T*wc = 0.0503, PM = 62.1 deg, DM = 0.711 s, w180 = 9.02 rad/s, GM = 11.2 (21.0 dB), Ms = 1.3334
+    retardo entero adicional maximo estable: 21 periodos (0.693 s); retardo total critico = 0.811 s
+  [ganancias por defecto del firmware original (Kp=20, Kd=12, Ki=0), sin retardo, Ld = 0 (modelo efectivo, n_d = 0)] Ld = 0.0000 s (d = 0, delta = 0.000)
+    polos dominantes |max| = 0.9531; polos: [0.9491+0.0862j 0.9491-0.0862j 0.0032+0.j     0.    +0.j    ]
+    wc = 2.523 rad/s, T*wc = 0.0832, PM = 49.1 deg, DM = 0.340 s, w180 = 28.59 rad/s, GM = 66.5 (36.5 dB), Ms = 1.5141
+    retardo entero adicional maximo estable: 10 periodos (0.330 s); retardo total critico = 0.340 s
+  [ganancias por defecto del firmware original (Kp=20, Kd=12, Ki=0), Ld = T_cap (cota superior)] Ld = 0.1000 s (d = 3, delta = 0.030)
+    polos dominantes |max| = 0.9696; polos: [ 0.9652+0.0923j  0.9652-0.0923j -0.0098+0.25j   -0.0098-0.25j  ]
+    wc = 2.523 rad/s, T*wc = 0.0832, PM = 34.7 deg, DM = 0.240 s, w180 = 5.20 rad/s, GM = 3.2 (10.0 dB), Ms = 2.1747
+    retardo entero adicional maximo estable: 7 periodos (0.231 s); retardo total critico = 0.340 s
+  banda de insensibilidad (final, Kp=16.42): |e| <= 3 ticks/frame = 0.0096 m/s
+  banda de insensibilidad (PSO, Kp=10.1): |e| <= 4 ticks/frame = 0.0128 m/s
+  error para que Ki*e alcance una unidad: 1000.0 ticks/frame
+  firmware bit-exacto, definitivas, sin retardo (zona muerta 0 PWM): yss=0.1313, tr=0.59 s, OS=12.8%
+  firmware bit-exacto, definitivas, sin retardo (zona muerta 40 PWM): yss=0.1306, tr=0.56 s, OS=15.3%
+
+===== Prediccion con la rutina de simulacion del PSO (sin retardo aplicado) =====
+  izquierda, PSO evaluado (Kd=25): referencia 0.1306 m/s, yss=0.1338, tr=0.80 s, OS=4.6%
+  izquierda, PSO informado: referencia 0.1306 m/s, yss=0.1354, tr=0.80 s, OS=3.8%
+  izquierda, definitivas: referencia 0.1306 m/s, yss=0.1355, tr=0.60 s, OS=15.5%
+  derecha, PSO evaluado (Kd=25): referencia 0.1273 m/s, yss=0.1303, tr=1.10 s, OS=2.4%
+  derecha, PSO informado: referencia 0.1273 m/s, yss=0.1280, tr=1.10 s, OS=0.5%
+  derecha, definitivas: referencia 0.1273 m/s, yss=0.1282, tr=0.60 s, OS=10.1%
+
+===== Barrido de robustez (625 combinaciones) =====
+  izquierda, sin retardo (Ld = 0.0000 s): inestables 0/625; ganancia critica con tau nominal = 87.89 x Km; minima en el rango de tau = 22.87 x Km
+  izquierda, Ld del optimizador (Ld = 0.0001 s): inestables 0/625; ganancia critica con tau nominal = 87.25 x Km; minima en el rango de tau = 22.72 x Km
+  izquierda, Ld = T_cap (Ld = 0.1000 s): inestables 102/625; ganancia critica con tau nominal = 4.67 x Km; minima en el rango de tau = 4.40 x Km; menor multiplicador inestable en la grilla = 4.64
+  izquierda, Ki lineal, sin retardo (Ld = 0.0000 s): inestables 0/625; ganancia critica con tau nominal = 87.94 x Km; minima en el rango de tau = 22.89 x Km
+  izquierda, Ki lineal, Ld del optimizador (Ld = 0.0001 s): inestables 0/625; ganancia critica con tau nominal = 87.30 x Km; minima en el rango de tau = 22.73 x Km
+  izquierda, Ki lineal, Ld = T_cap (Ld = 0.1000 s): inestables 143/625; ganancia critica con tau nominal = 4.51 x Km; minima en el rango de tau = 2.79 x Km; menor multiplicador inestable en la grilla = 3.16
+  derecha, sin retardo (Ld = 0.0000 s): inestables 0/625; ganancia critica con tau nominal = 93.12 x Km; minima en el rango de tau = 23.29 x Km
+  derecha, Ld del optimizador (Ld = 0.0692 s): inestables 52/625; ganancia critica con tau nominal = 7.15 x Km; minima en el rango de tau = 5.76 x Km; menor multiplicador inestable en la grilla = 6.81
+  derecha, Ld = T_cap (Ld = 0.1000 s): inestables 104/625; ganancia critica con tau nominal = 4.61 x Km; minima en el rango de tau = 4.41 x Km; menor multiplicador inestable en la grilla = 4.64
+
+===== Condiciones de operacion =====
+  velocidad maxima de rueda = 0.1629 m/s = 51.1 ticks/frame
+  PWM estacionario requerido (izquierda) = 178
+  PWM estacionario requerido (derecha) = 183
+  giro en el lugar a 0.35 rad/s: rueda = 0.0329 m/s = 10.3 ticks/frame
+  paso maximo de consigna Nav2 por ciclo (8 Hz): lineal 0.0312 m/s
+
+===== Intervalos de confianza (95 %) =====
+  E_odom (%): n=5, media=3.6300, s=0.4437, IC95=[3.0791, 4.1809] (semiamplitud 0.5509)
+  E_seg real (%): n=5, media=7.1800, s=0.4281, IC95=[6.6485, 7.7115] (semiamplitud 0.5315)
+  desviacion angular |dtheta-360| real (grados): n=5, media=11.6600, s=7.9798, IC95=[1.7517, 21.5683] (semiamplitud 9.9083)
+  cobertura libre (%): n=5, media=62.2200, s=12.9386, IC95=[46.1546, 78.2854] (semiamplitud 16.0654)
+  area libre (m2): n=5, media=3.4978, s=0.0271, IC95=[3.4642, 3.5314] (semiamplitud 0.0336)
+  rapidez media de recorrido en exploracion (m/s): n=5, media=0.0287, s=0.0021, IC95=[0.0260, 0.0313] (semiamplitud 0.0026)
+  recorrido total = 21.901 m en 12.68 min
+  CV area libre = 0.77 %
+  exploraciones validas 5/6: IC95 exacto (Clopper-Pearson) = [35.9, 99.6] %
+  repeticiones para reducir a la mitad la semiamplitud de E_odom: n = 13
+  ensayos sin fallas necesarios para que el limite inferior del IC95 supere 80 %: n = 17
+  15 exitos en 15 intentos: limite inferior IC95 = 78.2 %

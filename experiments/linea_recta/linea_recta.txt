@@ -1,0 +1,28 @@
+# ── RASPBERRY PI (SSH) ──────────────────────────────────────
+# Ejecutar con: bash ~/robot_ws/launch_robot_all.sh
+# O manualmente:
+cd robot_ws
+colcon build --symlink-install --executor sequential
+source install/setup.bash
+ros2 launch articubot_one launch_robot.launch.py
+
+# ── PC (ESTACIÓN DE TRABAJO) ────────────────────────────────
+# Verificar comunicación DDS:
+ros2 topic echo /odom --once
+
+# Orquestador completo (recomendado):
+bash bash ~/tesis_black_robot/experiments/run_prueba_recta.sh
+
+# O manual prueba a prueba:
+source /opt/ros/foxy/setup.bash
+source ~/tesis_black_robot/install/setup.bash
+python3 prueba_recta.py --prueba 1
+ros2 bag record /odom /tf -o prueba_recta_1
+
+
+
+
+
+
+
+

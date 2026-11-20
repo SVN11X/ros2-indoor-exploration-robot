@@ -1,0 +1,32 @@
+<!--
+  navigate_w_replanning_and_recovery.xml
+-->
+<BehaviorTree ID="MainTree">
+  <RecoveryNode number_of_retries="2" name="NavigateRecovery">
+    <PipelineSequence name="NavigateWithReplanning">
+      <RateController hz="4.0">
+        <RecoveryNode number_of_retries="1" name="ComputePathToPose">
+          <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+          <ClearCostmapAroundRobot service_name="global_costmap/clear_costmap_around_robot" reset_distance="1.5"/>
+        </RecoveryNode>
+      </RateController>
+      <RecoveryNode number_of_retries="1" name="FollowPath">
+        <FollowPath path="{path}" controller_id="FollowPath"/>
+        <ClearCostmapAroundRobot service_name="local_costmap/clear_costmap_around_robot" reset_distance="1.0"/>
+      </RecoveryNode>
+    </PipelineSequence>
+
+    <ReactiveFallback name="RecoveryFallback">
+      <GoalUpdated/>
+      <SequenceStar name="RecoveryActions">
+        <ClearCostmapAroundRobot service_name="local_costmap/clear_costmap_around_robot" reset_distance="1.0"/>
+        <ClearCostmapAroundRobot service_name="global_costmap/clear_costmap_around_robot" reset_distance="1.5"/>
+        <BackUp backup_dist="0.15" backup_speed="0.05" time_allowance="8.0"/>
+        <Spin spin_dist="0.8"/>
+        <ComputePathToPose goal="{goal}" path="{recovery_path}" planner_id="GridBased"/>
+        <FollowPath path="{recovery_path}" controller_id="FollowPath"/>
+        <Wait wait_duration="2"/>
+      </SequenceStar>
+    </ReactiveFallback>
+  </RecoveryNode>
+</BehaviorTree>

@@ -1,0 +1,30 @@
+# ============================================================
+# requirements.txt — Librerías Python para scripts de /test
+# Entorno: Ubuntu 20.04 LTS + ROS2 Foxy + Python 3.8
+# ============================================================
+
+# --- Cálculo numérico ---
+numpy==1.24.4
+
+# --- Visualización y gráficos ---
+matplotlib==3.7.5
+
+# --- Análisis de datos y tablas ---
+pandas==2.0.3
+
+# --- Optimización / identificación de sistemas (analizar_pid.py, PSO) ---
+scipy==1.10.1
+
+# --- Comunicación serial (pyArduino.py) ---
+pyserial==3.5
+
+# --- Lectura de rosbags SQLite3 (analizar_slam, analizar_giro, etc.) ---
+# rosbag2_py  →  instalado vía apt (ver setup_test_env.sh)
+# rclpy       →  instalado vía apt
+# geometry_msgs, nav_msgs, sensor_msgs → vía apt
+
+# --- Exportación LaTeX (analizar_prueba_recta, analizar_prueba_giro) ---
+# Generado con f-strings nativas, sin dependencia externa
+
+# --- Utilidades estándar (incluidas en Python 3.8) ---
+# argparse, math, os, sys, time, glob, threading, sqlite3 → stdlib

@@ -1,0 +1,6 @@
+image: /home/dev_ws/tesis_black_robot/src/test/sesiones_mapeo/sesion_actual/iteracion_05/mapeo/mapa_explore_real.pgm
+resolution: 0.05000000074505806
+origin: [-1.684190450791723, -0.9925506951894112, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.25

@@ -1,0 +1,10 @@
+prueba,3
+modo,sim
+giro_teorico_deg,360.0
+delta_odom_deg,346.620424
+deriva_odom_deg,13.379576
+delta_real_deg,346.620424
+deriva_real_deg,13.379576
+fuente_real,odom (fallback)
+yaw_inicial_deg,-31.239252
+yaw_final_deg,-42.221009

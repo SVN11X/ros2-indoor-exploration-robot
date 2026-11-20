@@ -1,0 +1,60 @@
+% ============================================================
+% Resultados generados automáticamente por SintonizacionLambda.py
+% Lambda factor: 3.0τ  |  PWM_NOMINAL: 143.0  |  Ko: 50.0
+% ============================================================
+
+% --- TABLA: Parámetros FODT identificados en lazo abierto ---
+\begin{table}[H]
+\centering
+\caption{Par\'{a}metros del modelo FODT identificado en lazo abierto.}
+\label{tab:fodt_lambda}
+\begin{tabular}{lccc}
+\hline
+\textbf{Rueda} & $K_m$ \textbf{(m/s/PWM)} & $\tau$ \textbf{(s)} & $L$ \textbf{(s)} \\
+\hline
+Izquierda & 0.000913 & 0.3291 & 0.0001 \\
+Derecha & 0.000890 & 0.3485 & 0.0845 \\
+\hline
+\end{tabular}
+\end{table}
+
+% --- TABLA: Ganancias PSO vs Lambda (forma estándar) ---
+\begin{table}[H]
+\centering
+\caption{Comparaci\'{{o}}n de ganancias PID: firmware definitivo vs.\ sinton\'{{\i}}a Lambda ($\lambda = 3\tau$). Ganancias en escala est\'{{a}}ndar Lambda ($K_{{\mathrm{{std}}}}=K_{{\mathrm{{fw}}}}/f_\lambda$, $f_\lambda\approx 22{,}80$).}
+\label{tab:comparacion_metodos}
+\footnotesize
+\begin{tabular}{lcccccc}
+\hline
+\textbf{M\'{e}todo} & $K_p$ & $K_i$ & $K_d$ & \textbf{Sobreimpulso (\%)} & \textbf{$t_r$ (s)} & \textbf{$e_{ss}$ (m/s)} \\
+\hline
+Firmware (izq.) & 0.7017 & 0.09867 & 0.8902 & 15.63 & 0.600 & 0.00488 \\
+Lambda (izq.) & 2.7193 & 7.50238 & 0.0823 & 46.42 & 0.200 & 0.00015 \\
+\hline
+Firmware (der.) & 0.7201 & 0.00132 & 0.8793 & 10.66 & 0.600 & 0.00192 \\
+Lambda (der.) & 2.8241 & 7.22823 & 0.1064 & 44.15 & 0.200 & 0.00005 \\
+\hline
+\end{tabular}
+\end{table}
+
+% --- TABLA: Métricas completas de desempeño ---
+\begin{table}[H]
+\centering
+\caption{M\'{e}tricas de desempe\~{n}o: Firmware vs.\ Lambda ($\lambda=3\tau$).}
+\label{tab:metricas_comparacion}
+\begin{tabular}{llcccc}
+\hline
+\textbf{Rueda} & \textbf{M\'{e}todo} & \textbf{OS (\%)} & \textbf{$t_r$ (s)} & \textbf{$t_s$ (s)} & \textbf{$e_{ss}$ (m/s)} \\
+\hline
+\multirow{2}{*}{Izquierda} & Firmware & 15.63 & 0.600 & N/A & 0.00488 \\
+ & Lambda & 46.42 & 0.200 & N/A & 0.00015 \\
+\hline
+\multirow{2}{*}{Derecha} & Firmware & 10.66 & 0.600 & 3.100 & 0.00192 \\
+ & Lambda & 44.15 & 0.200 & N/A & 0.00005 \\
+\hline
+\end{tabular}
+\end{table}
+
+% --- TEXTO: Diferencias de sobreimpulso ---
+% Rueda izquierda: Lambda +30.79% sobreimpulso, Lambda 0.400s más rápida en subida
+% Rueda derecha: Lambda +33.49% sobreimpulso, Lambda 0.400s más rápida en subida

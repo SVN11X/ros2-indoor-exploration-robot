@@ -1,0 +1,25 @@
+════════════════════════════════════════════════════════════
+  ITERACIÓN 02 — Sesión actual
+════════════════════════════════════════════════════════════
+
+Timestamp:     iter02
+Fecha:         2026-06-22 21:43:27
+
+── ARCHIVOS GENERADOS ──────────────────────────────────────
+
+Mapeo (/home/dev_ws/tesis_black_robot/src/test/sesiones_mapeo/sesion_actual/iteracion_02/mapeo):
+
+Exploración (/home/dev_ws/tesis_black_robot/src/test/sesiones_mapeo/sesion_actual/iteracion_02/exploracion):
+  explore_log_real.txt
+  odom_trayectoria_real.csv
+
+Sistema (/home/dev_ws/tesis_black_robot/src/test/sesiones_mapeo/sesion_actual/iteracion_02/sistema):
+  explore.yaml
+  mapper_params.yaml
+  nav2_params.yaml
+
+── MÉTRICAS DE EXPLORACIÓN ─────────────────────────────────
+  (no disponible)
+
+── MÉTRICAS SLAM ───────────────────────────────────────────
+  (no disponible)

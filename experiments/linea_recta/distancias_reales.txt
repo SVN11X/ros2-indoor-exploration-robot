@@ -1,0 +1,7 @@
+# distancias_reales.txt — medidas con cinta métrica (metros)
+# Generado por run_prueba_recta.sh — mié 25 mar 2026 10:38:46 -03
+1.846
+1.868
+1.851
+1.856
+1.861

@@ -1,0 +1,54 @@
+% ==============================================================
+% Resultados generados automáticamente por SintonizacionAutomatica.py
+% PWM_STEP nominal: calculado del dato  |  Ko: 50
+% ==============================================================
+
+% --- TABLA 1: Parámetros del modelo FODT identificado en lazo abierto ---
+\begin{table}[H]
+\centering
+\caption{Par\'{a}metros del modelo FODT identificado en lazo abierto mediante PSO (\texttt{SintonizacionAutomatica.py}).}
+\label{tab:fodt_auto}
+\begin{tabular}{lccc}
+\hline
+\textbf{Rueda} & $K_m$ \textbf{(m/s/PWM)} & $\tau$ \textbf{(s)} & $L$ \textbf{(s)} \\
+\hline
+Izquierda & $0.000913$ & $0.3291$ & $0.0001$ \\
+Derecha & $0.000890$ & $0.3485$ & $0.0692$ \\
+\hline
+\end{tabular}
+\end{table}
+
+% --- TABLA 2: Ganancias PID iniciales sugeridas por PSO ---
+\begin{table}[H]
+\centering
+\caption{Ganancias PID sugeridas por PSO como punto de partida para el refinamiento experimental. Los valores definitivos del firmware pueden diferir tras el ajuste iterativo con \texttt{ControlLazoCerrado.py} (v\'{e}ase la Tabla~\ref{tab:pid_pso_results}).}
+\label{tab:pid_auto_inicial}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Rueda} & $K_p$ & $K_d$ & $K_i$ & $K_o$ \\
+\hline
+Izquierda & $12.48$ & $34.69$ & $0.00001$ & $50$ \\
+Derecha & $10.10$ & $36.70$ & $0.00001$ & $50$ \\
+\hline
+\end{tabular}
+\end{table}
+
+% --- TABLA 3: PSO sugerido vs. ganancias definitivas del firmware ---
+% INSTRUCCIÓN: completar la columna 'Firmware' con los valores reales
+%              de resetPID() en diff_controller.h.
+\begin{table}[H]
+\centering
+\caption{Comparaci\'{o}n entre las ganancias PID sugeridas por PSO y los valores definitivos cargados en el firmware tras el refinamiento experimental iterativo.}
+\label{tab:auto_vs_firmware}
+\begin{tabular}{llcccc}
+\hline
+\textbf{Rueda} & \textbf{Origen} & $K_p$ & $K_d$ & $K_i$ & $K_o$ \\
+\hline
+\multirow{2}{*}{Izquierda} & PSO (inicial) & $12.48$ & $34.69$ & $0.00001$ & $50$ \\
+ & Firmware (final) & $16.00$ & $20.30$ & $0.075$ & $50$ \\
+\hline
+\multirow{2}{*}{Derecha} & PSO (inicial) & $10.10$ & $36.70$ & $0.00001$ & $50$ \\
+ & Firmware (final) & $16.42$ & $20.05$ & $0.001$ & $50$ \\
+\hline
+\end{tabular}
+\end{table}

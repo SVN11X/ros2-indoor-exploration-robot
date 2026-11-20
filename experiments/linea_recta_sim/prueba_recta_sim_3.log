@@ -1,0 +1,11 @@
+prueba,3
+modo,sim
+dist_teorica,2.0000
+dist_odom,1.945529
+dist_real,1.945529
+fuente_real,odom (fallback, /get_entity_state no disponible)
+error_pct,0.0000
+xi,3.820046
+yi,-0.000520
+xf,5.765575
+yf,-0.000950

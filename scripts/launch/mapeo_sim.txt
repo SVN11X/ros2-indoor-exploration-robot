@@ -1,0 +1,55 @@
+================================================================================
+ OPCIÓN 1: SCRIPT AUTOMÁTICO (recomendado)
+ Espera a que cada componente esté listo antes de lanzar el siguiente.
+ Cuando veas "SISTEMA LISTO" puedes operar el robot.
+================================================================================
+
+bash ~/tesis_black_robot/scripts/launch/launch_sim_all.sh
+
+================================================================================
+ OPCIÓN 2: MANUAL (4 ventanas)
+ Los archivos _sim son para simulación, los originales para el robot real.
+================================================================================
+
+Ventana 1 — Build + Simulación:
+
+killall -9 gzserver gzclient robot_state_publisher rviz2 2>/dev/null; sleep 2
+cd ~/tesis_black_robot
+colcon build --symlink-install --executor sequential
+source install/setup.bash
+ros2 launch articubot_one launch_sim.launch.py
+
+(Esto ya lanza: rsp + joystick + twist_mux + gazebo + spawn + controladores)
+
+Ventana 2 — SLAM (esperar a que Gazebo esté listo):
+
+cd ~/tesis_black_robot && source install/setup.bash
+ros2 launch slam_toolbox online_async_launch.py \
+  params_file:=./src/articubot_one/config/mapper_params_online_async_sim.yaml \
+  use_sim_time:=true
+
+Ventana 3 — Nav2 (esperar a que SLAM publique mapa):
+
+cd ~/tesis_black_robot && source install/setup.bash
+ros2 launch nav2_bringup navigation_launch.py \
+  use_sim_time:=true \
+  map_subscribe_transient_local:=true \
+  params_file:=/home/dev_ws/tesis_black_robot/src/articubot_one/config/nav2_params_sim.yaml
+
+Ventana 4 — RViz:
+
+cd ~/tesis_black_robot && source install/setup.bash
+ros2 run rviz2 rviz2 -d ./src/articubot_one/config/main.rviz
+
+gnome-terminal --tab --title="1-Build+Sim" --command="bash -c 'killall -9 gzserver gzclient robot_state_publisher rviz2 2>/dev/null; sleep 2; cd ~/tesis_black_robot; colcon build --symlink-install --executor sequential; source install/setup.bash; ros2 launch articubot_one launch_sim.launch.py; exec bash'" \
+--tab --title="2-SLAM" --command="bash -c 'sleep 30; cd ~/tesis_black_robot; source install/setup.bash; ros2 launch slam_toolbox online_async_launch.py params_file:=./src/articubot_one/config/mapper_params_online_async_sim.yaml use_sim_time:=true; exec bash'" \
+--tab --title="3-Nav2" --command="bash -c 'sleep 70; cd ~/tesis_black_robot; source install/setup.bash; ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true map_subscribe_transient_local:=true params_file:=/home/dev_ws/tesis_black_robot/src/articubot_one/config/nav2_params_sim.yaml; exec bash'" \
+--tab --title="4-RViz" --command="bash -c 'sleep 80; cd ~/tesis_black_robot; source install/setup.bash; ros2 run rviz2 rviz2 -d /home/dev_ws/tesis_black_robot/src/articubot_one/config/main.rviz; exec bash'"
+
+================================================================================
+ ROBOT REAL (usa archivos originales, sin cambios)
+================================================================================
+
+Los comandos del robot real siguen usando:
+  - mapper_params_online_async.yaml   (sin _sim)
+  - nav2_params.yaml                  (sin _sim)

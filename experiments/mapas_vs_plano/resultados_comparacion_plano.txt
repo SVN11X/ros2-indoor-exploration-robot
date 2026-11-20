@@ -1,0 +1,27 @@
+Iteración 1: 49x42 celdas, área libre 3.505 m2, cobertura 82.9%, rotación 85.9 grados
+   plano->mapa: media 3.55 cm, p95 9.3 cm (tramos observados 92%) | mapa->plano: media 4.23 cm, p95 10.4 cm
+Iteración 3: 54x56 celdas, área libre 3.540 m2, cobertura 53.5%, rotación 204.1 grados
+   plano->mapa: media 3.19 cm, p95 7.3 cm (tramos observados 92%) | mapa->plano: media 4.30 cm, p95 10.6 cm
+Iteración 4: 53x56 celdas, área libre 3.478 m2, cobertura 54.2%, rotación 202.5 grados
+   plano->mapa: media 3.72 cm, p95 9.6 cm (tramos observados 93%) | mapa->plano: media 4.94 cm, p95 12.2 cm
+Iteración 5: 46x53 celdas, área libre 3.483 m2, cobertura 67.1%, rotación 9.2 grados
+   plano->mapa: media 3.53 cm, p95 9.3 cm (tramos observados 92%) | mapa->plano: media 4.30 cm, p95 11.0 cm
+Iteración 6: 55x54 celdas, área libre 3.478 m2, cobertura 53.5%, rotación 114.4 grados
+   plano->mapa: media 3.17 cm, p95 6.8 cm (tramos observados 92%) | mapa->plano: media 4.09 cm, p95 9.7 cm
+
+Medida | plano (m) | media mapas (m) | mín | máx | diferencia (cm)
+Alto interior del recinto | 1.91 | 1.89 | 1.89 | 1.90 | -1.7
+Ancho del primer pasillo | 0.58 | 0.62 | 0.61 | 0.64 | +4.1
+Ancho del segundo pasillo | 0.58 | 0.60 | 0.59 | 0.61 | +2.4
+Ancho del tercer pasillo | 0.98 | 1.03 | 1.02 | 1.05 | +5.2
+Paso sobre el primer muro largo | 0.68 | 0.69 | 0.68 | 0.69 | +0.5
+Paso bajo el segundo muro largo | 0.68 | 0.67 | 0.67 | 0.68 | -0.8
+Largo del tabique unido al segundo muro largo | 0.40 | 0.34 | 0.32 | 0.38 | -6.1
+Altura de ese tabique sobre el extremo del muro | 0.40 | 0.39 | 0.38 | 0.40 | -0.5
+Distancia del tabique superior derecho al muro superior | 0.40 | 0.32 | 0.31 | 0.34 | -7.8
+Largo del tabique superior derecho | 0.40 | 0.38 | 0.34 | 0.41 | -2.3
+Distancia del tabique corto inferior al muro derecho | 0.61 | 0.70 | 0.69 | 0.71 | +9.3
+
+Distancia media plano->mapa por iteración (cm): [3.55 3.19 3.72 3.53 3.17]; media 3.43; todos los puntos: p95 8.4 cm
+Intervalo de confianza al 95% de la distancia media: 3.13 a 3.73 cm
+Figura: ./mapas_vs_plano.png

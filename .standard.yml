@@ -1,0 +1,29 @@
+# Identity of this repository for the standard.
+# After editing, run: python .standards/scripts/standard.py agents .
+standard: SVN11X/standards@v1
+owner: SVN11X
+name: tesis_black_robot
+profile: software
+setup: done
+license: MIT
+content_language: es
+github:
+  description: ROS 2 workspace of a differential drive robot for autonomous indoor exploration and navigation (UTEM thesis).
+  homepage: ''
+  topics:
+  - software
+options:
+  kind: cli
+  architecture: simple
+  layout: single
+  language: python
+parts: {}
+part_options: {}
+extra_folders:
+  firmware: Arduino Nano sketch (ROSArduinoBridge) and the PID tuning scripts that talk to it. Not a ROS 2 package, so it lives outside src/.
+  experiments: Field and simulation experiments of the thesis, with their scripts and recorded results. They need the robot or Gazebo, so they are not automated tests.
+skills:
+- repo-improve
+- code-review
+- tool-radar
+- antislop-code

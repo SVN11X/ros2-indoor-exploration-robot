@@ -1,0 +1,35 @@
+Mapeo real con robot, primero se debe ejecutar los comandos de mapeo_robot.txt
+
+1° ventana
+cd tesis_black_robot
+colcon build --symlink-install --executor sequential
+source install/setup.bash
+
+2° ventana
+source install/setup.bash
+ros2 launch articubot_one joystick.launch.py
+
+3° ventana
+ros2 run twist_mux twist_mux --ros-args --params-file ./src/articubot_one/config/twist_mux.yaml -r cmd_vel_out:=diff_cont/cmd_vel_unstamped
+
+4° ventana
+ros2 launch slam_toolbox online_async_launch.py params_file:=./src/articubot_one/config/mapper_params_online_async.yaml use_sim_time:=false
+
+5° ventana
+ros2 launch nav2_bringup navigation_launch.py use_sim_time:=false map_subscribe_transient_local:=true params_file:=/home/dev_ws/tesis_black_robot/src/articubot_one/config/nav2_params.yaml
+
+6° ventana
+ros2 run rviz2 rviz2 -d /home/dev_ws/tesis_black_robot/src/articubot_one/config/main.rviz
+
+7° ventana (se ocupa cuando los anteriores esten listos)
+source install/setup.bash
+ros2 launch articubot_one explore.launch.py use_sim_time:=false
+
+# comandos cmd
+gnome-terminal \
+--tab --title="Build Workspace" --command="bash -c 'cd ~/tesis_black_robot; colcon build --symlink-install --executor sequential; source install/setup.bash; exec bash'" \
+--tab --title="Joystick" --command="bash -c 'sleep 10; cd ~/tesis_black_robot;source install/setup.bash; ros2 launch articubot_one joystick.launch.py; exec bash'" \
+--tab --title="Twist Mux" --command="bash -c 'sleep 20; cd ~/tesis_black_robot; ros2 run twist_mux twist_mux --ros-args --params-file ./src/articubot_one/config/twist_mux.yaml -r cmd_vel_out:=diff_cont/cmd_vel_unstamped; exec bash'" \
+--tab --title="SLAM Toolbox" --command="bash -c 'sleep 30; cd ~/tesis_black_robot; ros2 launch slam_toolbox online_async_launch.py params_file:=./src/articubot_one/config/mapper_params_online_async.yaml use_sim_time:=false; exec bash'" \
+--tab --title="Nav2" --command="bash -c 'sleep 40; cd ~/tesis_black_robot; ros2 launch nav2_bringup navigation_launch.py use_sim_time:=false map_subscribe_transient_local:=true params_file:=/home/dev_ws/tesis_black_robot/src/articubot_one/config/nav2_params.yaml; exec bash'" \
+--tab --title="RViz2" --command="bash -c 'sleep 50; cd ~/tesis_black_robot; ros2 run rviz2 rviz2 -d /home/dev_ws/tesis_black_robot/src/articubot_one/config/main.rviz; exec bash'"

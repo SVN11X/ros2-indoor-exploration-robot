@@ -1,0 +1,204 @@
+<?xml version="1.0" ?>
+<!--
+  linea_recta.world  (v5 — definitivo)
+  ─────────────────────────────────────────────────────────────────────────────
+  Fixes respecto a versiones anteriores:
+    1. Plugin gazebo_ros_state cargado → /set_entity_state disponible
+       para resetear posición y ORIENTACIÓN del robot entre pruebas
+    2. Marcadores y postes SIN <collision> — el robot los atraviesa sin chocar
+    3. Corredor ancho: norte y=+1.5 / sur y=-2.5 → 1.5m margen al sur
+       (antes solo 0.5m → robot chocaba con pared sur por drift)
+    4. Postes de referencia en y=-0.6 (fuera de la trayectoria del robot en y=-1.0)
+
+  Robot spawn: x=-1.5, y=-1.0, z=0.05, yaw=0 (facing +X)
+  Recorrido:   5 × 2m en X+ sin reset entre pruebas
+-->
+<sdf version='1.7'>
+  <world name='linea_recta'>
+
+    <!-- ══ Plugin de estado — expone /set_entity_state y /get_entity_state ═══ -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <argument>set_entity_state:=set_entity_state</argument>
+        <argument>get_entity_state:=get_entity_state</argument>
+      </ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
+
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range><constant>0.9</constant>
+        <linear>0.01</linear><quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <gravity>0 0 -9.8</gravity>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+
+    <!-- ── Suelo ──────────────────────────────────────────────────────────── -->
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><plane><normal>0 0 1</normal><size>100 100</size></plane></geometry>
+          <surface>
+            <friction><ode><mu>100</mu><mu2>50</mu2></ode></friction>
+            <contact><ode/></contact><bounce/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>100 100</size></plane></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <n>Gazebo/Grey</n>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ══ PAREDES (solo estas tienen colisión) ═══════════════════════════════ -->
+
+    <model name='pared_trasera'>
+      <static>1</static>
+      <pose>-2.5 -0.5 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='c'><geometry><box><size>0.15 4.15 1.0</size></box></geometry></collision>
+        <visual name='v'>
+          <geometry><box><size>0.15 4.15 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><n>Gazebo/Grey</n></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name='pared_delantera'>
+      <static>1</static>
+      <pose>12.0 -0.5 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='c'><geometry><box><size>0.15 4.15 1.0</size></box></geometry></collision>
+        <visual name='v'>
+          <geometry><box><size>0.15 4.15 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><n>Gazebo/Grey</n></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Norte: 2.5m desde spawn (y=-1.0 → y=+1.5) -->
+    <model name='pared_norte'>
+      <static>1</static>
+      <pose>4.75 1.5 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='c'><geometry><box><size>14.65 0.15 1.0</size></box></geometry></collision>
+        <visual name='v'>
+          <geometry><box><size>14.65 0.15 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><n>Gazebo/Grey</n></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Sur: 1.5m desde spawn (y=-1.0 → y=-2.5) -->
+    <model name='pared_sur'>
+      <static>1</static>
+      <pose>4.75 -2.5 0.5 0 0 0</pose>
+      <link name='link'>
+        <collision name='c'><geometry><box><size>14.65 0.15 1.0</size></box></geometry></collision>
+        <visual name='v'>
+          <geometry><box><size>14.65 0.15 1.0</size></box></geometry>
+          <material><script><uri>file://media/materials/scripts/gazebo.material</uri><n>Gazebo/Grey</n></script></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ══ MARCAS DE POSICIÓN — SOLO VISUALES (SIN collision) ════════════════ -->
+    <!-- Discos en y=-1.0 (trayectoria del robot): sin colisión, robot pasa     -->
+    <!-- Postes en y=-0.6: desplazados del camino, solo referencia visual       -->
+
+    <!-- Spawn — disco verde -->
+    <model name='marca_spawn'>
+      <static>1</static><pose>-1.5 -0.5 0.005 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><cylinder><radius>0.15</radius><length>0.01</length></cylinder></geometry>
+          <material><ambient>0 0.8 0 1</ambient><diffuse>0 0.8 0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Meta 1 — rojo (x=0.5, +2m desde spawn) -->
+
+    <model name='meta_1_poste'>
+      <static>1</static><pose>0.5 -0.5 0.75 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.05 0.05 1.5</size></box></geometry>
+          <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Meta 2 — naranja (x=2.5) -->
+
+    <model name='meta_2_poste'>
+      <static>1</static><pose>2.5 -0.5 0.75 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.05 0.05 1.5</size></box></geometry>
+          <material><ambient>1 0.5 0 1</ambient><diffuse>1 0.5 0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Meta 3 — azul (x=4.5) -->
+
+    <model name='meta_3_poste'>
+      <static>1</static><pose>4.5 -0.5 0.75 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.05 0.05 1.5</size></box></geometry>
+          <material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Meta 4 — blanco (x=6.5) -->
+
+    <model name='meta_4_poste'>
+      <static>1</static><pose>6.5 -0.5 0.75 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.05 0.05 1.5</size></box></geometry>
+          <material><ambient>0.9 0.9 0.9 1</ambient><diffuse>0.9 0.9 0.9 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Meta 5 — amarillo (x=8.5) -->
+
+    <model name='meta_5_poste'>
+      <static>1</static><pose>8.5 -0.5 0.75 0 0 0</pose>
+      <link name='link'>
+        <visual name='v'>
+          <geometry><box><size>0.05 0.05 1.5</size></box></geometry>
+          <material><ambient>1 1 0 1</ambient><diffuse>1 1 0 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+</sdf>

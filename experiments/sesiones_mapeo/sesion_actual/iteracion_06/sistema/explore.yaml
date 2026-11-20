@@ -1,0 +1,26 @@
+explore_server:
+  ros__parameters:
+    # Frame base del robot (coincide con Nav2/AMCL)
+    robot_base_frame: "base_link"
+
+    # Fuente de mapa / costmap:
+    costmap_topic: "/global_costmap/costmap"    
+    costmap_updates_topic: "/global_costmap/costmap_updates"
+
+    # Visualización de fronteras en RViz
+    visualize: true
+
+    # Frecuencia de planificación (Hz) para reconsiderar fronteras
+    planner_frequency: 0.3
+
+    # Tiempo máximo sin progreso antes de descartar una frontera (s)
+    progress_timeout: 10.0
+
+    # Pesos en el cálculo de la ganancia de frontera
+    potential_scale: 3.0
+    orientation_scale: 0.0
+    gain_scale: 1.0
+
+    # Tolerancias y tamaño mínimo de frontera (entorno indoor)
+    transform_tolerance: 2.0
+    min_frontier_size: 0.05

@@ -1,0 +1,40 @@
+════════════════════════════════════════════════════════════
+  ITERACIÓN 01 — Sesión actual
+════════════════════════════════════════════════════════════
+
+Timestamp:     iter01
+Fecha:         2026-06-22 21:37:01
+
+── ARCHIVOS GENERADOS ──────────────────────────────────────
+
+Mapeo (/home/dev_ws/tesis_black_robot/src/test/sesiones_mapeo/sesion_actual/iteracion_01/mapeo):
+  mapa_explore_real.pgm
+  mapa_explore_real.yaml
+
+Exploración (/home/dev_ws/tesis_black_robot/src/test/sesiones_mapeo/sesion_actual/iteracion_01/exploracion):
+  explore_log_real.txt
+  explore_metricas_real.csv
+  explore_tabla_real.tex
+  odom_trayectoria_real.csv
+
+Sistema (/home/dev_ws/tesis_black_robot/src/test/sesiones_mapeo/sesion_actual/iteracion_01/sistema):
+  explore.yaml
+  mapper_params.yaml
+  nav2_params.yaml
+
+── MÉTRICAS DE EXPLORACIÓN ─────────────────────────────────
+indicador,valor,unidad
+modo,real,
+timestamp,real,
+duracion,2.1,min
+metas_generadas,0,
+metas_alcanzadas,0,
+metas_fallidas,288,
+tasa_exito,---,%
+cobertura,82.9,%
+area_libre,3.51,m2
+distancia_total,---,m
+intervenciones,0,
+
+── MÉTRICAS SLAM ───────────────────────────────────────────
+  (no disponible)

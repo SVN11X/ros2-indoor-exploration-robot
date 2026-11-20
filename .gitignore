@@ -1,0 +1,61 @@
+# ROS2 build y log
+/build/
+/install/
+/log/
+*.pyc
+__pycache__/
+
+# Archivos temporales de Colcon
+colcon_command_prefix*.sh.env
+
+# Archivos de IDE
+.vscode/
+*.swp
+
+# Archivos grandes / Binarios
+*.iso
+*.deb
+*.mp4
+*.avi
+*.mov
+*.zip
+*.rar
+*.db3
+*.db3-wal
+*.db3-shm
+
+# Archivos basura del Sistema Operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Variables de entorno y secretos
+.env
+
+# Folder or Files
+/doc/build
+/video
+
+# standard
+.standards/
+.env.*
+!.env.example
+*.log
+# Field test logs are thesis evidence and stay tracked.
+!experiments/**/*.log
+.idea/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+node_modules/
+target/
+.coverage
+coverage/
+.pytest_cache/
+.ruff_cache/
+
+# Installers and executables stay out of git.
+*.exe

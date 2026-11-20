@@ -1,0 +1,22 @@
+Activacion del robot para recibir las instrucciones de mapeo.txt
+
+1° ventana
+cd robot_ws
+colcon build --symlink-install --executor sequential
+source install/setup.bash
+
+2° ventana
+ros2 launch articubot_one launch_robot.launch.py
+
+3° ventana
+ros2 launch articubot_one rplidar.launch.py
+
+4° ventana
+htop
+exec bash
+
+gnome-terminal \
+--tab --title="Build Workspace" --command="bash -c 'cd ~/robot_ws; colcon build --symlink-install --executor sequential; source install/setup.bash; exec bash'" \
+--tab --title="Robot Launch" --command="bash -c 'sleep 65; cd ~/robot_ws; source install/setup.bash;ros2 launch articubot_one launch_robot.launch.py; exec bash'" \
+--tab --title="RPLIDAR" --command="bash -c 'sleep 90; cd ~/robot_ws; ros2 launch articubot_one rplidar.launch.py; exec bash'" \
+--tab --title="Monitoreo del Sistema" --command="bash -c 'sleep 100; htop; exec bash'"

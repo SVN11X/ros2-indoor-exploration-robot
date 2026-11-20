@@ -1,0 +1,30 @@
+* text=auto eol=lf
+# Recorded test sessions are thesis evidence. Keep their bytes as they were committed.
+experiments/sesiones_mapeo/**/slam_metricas_iter*.csv -text
+experiments/sesiones_mapeo/**/resumen_slam_real_todas.csv -text
+experiments/sesiones_mapeo/**/explore_metricas_real.csv -text
+experiments/sesiones_mapeo/**/RESUMEN_iteracion_0[13456].txt -text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.mp3 binary
+*.mp4 binary
+*.webm binary
+*.glb binary
+*.stl binary
+*.step binary
+*.parquet binary
+# Files over 5 MB go to Git LFS. Example:
+# *.psd filter=lfs diff=lfs merge=lfs -text
+*.posegraph filter=lfs diff=lfs merge=lfs -text
+*_slam_replay.log filter=lfs diff=lfs merge=lfs -text

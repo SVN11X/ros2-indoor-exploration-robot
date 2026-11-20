@@ -1,0 +1,12 @@
+indicador,valor,unidad
+modo,real,
+timestamp,real,
+duracion,0.8,min
+metas_generadas,0,
+metas_alcanzadas,0,
+metas_fallidas,81,
+tasa_exito,---,%
+cobertura,53.4,%
+area_libre,3.48,m2
+distancia_total,---,m
+intervenciones,0,
