@@ -310,7 +310,7 @@ lanzar_monitor_pi() {
 
     echo -e "${YELLOW}[ITER ${ITER_NUM}] Lanzando monitor_pi.sh en la Pi (tag=${PI_TAG})...${NC}"
 
-    local PI_MONITOR_SCRIPT="~/robot_ws/test/recursos/monitor_pi.sh"
+    local PI_MONITOR_SCRIPT="~/robot_ws/experiments/recursos/monitor_pi.sh"
 
     if ! ssh -o ConnectTimeout=5 -o BatchMode=yes "$SSH_PI" \
         "test -f $PI_MONITOR_SCRIPT" 2>/dev/null; then
