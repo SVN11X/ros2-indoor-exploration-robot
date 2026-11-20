@@ -8,7 +8,7 @@ This document describes how to set up a dedicated network between a workstation 
 
 The following diagram shows the connection layout and the static IP addresses defined for this project:
 
-![Network topology](imag/topologia_red.png)
+![Network topology](images/network-topology.png)
 
 
 ## Prerequisites

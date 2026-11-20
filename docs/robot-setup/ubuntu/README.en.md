@@ -19,7 +19,7 @@ The procedure requires the following downloads:
 
 A USB drive larger than 4 GB was connected. Rufus was then run with the settings shown in the attached screenshot:
 
-![Settings used in Rufus](imag/rufus_config.png)
+![Settings used in Rufus](images/rufus-settings.png)
 
 **Settings applied:**
 

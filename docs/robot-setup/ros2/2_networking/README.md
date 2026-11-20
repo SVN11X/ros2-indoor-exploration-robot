@@ -8,7 +8,7 @@ Este documento describe el procedimiento técnico para configurar una red dedica
 
 El siguiente diagrama ilustra la arquitectura de conexión y las direcciones IP estáticas definidas para este proyecto:
 
-![Topologia de red](imag/topologia_red.png)
+![Topologia de red](images/network-topology.png)
 
 
 ## Requisitos Previos

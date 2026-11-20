@@ -19,7 +19,7 @@ Para la ejecución del procedimiento, se requiere la obtención de los siguiente
 
 Se procedió a conectar una unidad de almacenamiento USB con capacidad superior a 4 GB. Posteriormente, se ejecutó el software Rufus y se establecieron los parámetros de configuración según se muestra en la evidencia adjunta:
 
-![Configuración Establecida en Rufus](imag/rufus_config.png)
+![Configuración Establecida en Rufus](images/rufus-settings.png)
 
 **Detalle de la configuración aplicada:**
 
