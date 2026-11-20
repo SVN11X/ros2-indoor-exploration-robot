@@ -6,6 +6,13 @@ Workspace de ROS 2 del trabajo de titulación de Ingeniería Civil Electrónica 
 
 **Estado:** terminado. El código y los datos corresponden a la versión final de la tesis.
 
+<p align="center">
+  <img src="docs/images/robot/robot-side.jpg" height="270" alt="Vista lateral del robot">
+  <a href="https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/download/demo-videos/2026-02-10-exploration-modular-arena.mp4"><img src="docs/videos/2026-02-10-exploration-modular-arena.gif" height="270" alt="El robot explora la arena modular de pruebas"></a>
+</p>
+
+<p align="center"><em>El prototipo y una exploración autónoma en la arena modular de pruebas. Haz clic en la animación para ver el video completo.</em></p>
+
 ## Qué hace
 
 - Mapeo 2D con SLAM Toolbox y un RPLidar A1.
@@ -84,6 +91,12 @@ bash ~/tesis_black_robot/scripts/launch/launch_mapeo_all.sh
 ```
 
 Cada prueba de la tesis está en `experiments/` con su script `run_*.sh`. El flujo completo está explicado en [docs/how-it-works.md](docs/how-it-works.md).
+
+## Imágenes y videos
+
+- [docs/images/](docs/images/README.md): fotos del robot y de las pruebas, y capturas de la simulación y del robot real.
+- [docs/videos/](docs/videos/README.md): vistas previas de 4 demos del robot real, con enlace a cada video completo.
+- Los gráficos de resultados están junto a cada prueba en [experiments/](experiments/README.md) y en [firmware/](firmware/README.md).
 
 ## Documentación
 

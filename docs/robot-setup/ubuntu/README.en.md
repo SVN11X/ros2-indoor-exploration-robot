@@ -10,6 +10,7 @@ The procedure requires the following downloads:
 
 * **Ubuntu 20.04 ISO image:**
   [https://releases.ubuntu.com/focal/ubuntu-20.04.6-desktop-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-desktop-amd64.iso)
+  <img src="images/ubuntu-download-page.png" width="420" alt="Ubuntu 20.04 download page">
 * **Media creation tool (Rufus):**
   [https://rufus.ie/en/](https://rufus.ie/en/)
 

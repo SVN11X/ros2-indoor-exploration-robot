@@ -16,3 +16,5 @@ Agreed with the owner on 2026-11-20. Goal: order folders and files with the SVN1
 - [x] Fill docs/goals.md and docs/how-it-works.md from the thesis, and list third-party packages in docs/credits.md.
 - [x] Record decisions: colcon layout, bilingual READMEs, Spanish code comments, Git LFS for session data.
 - [x] SKIPPED: formatter, linter, CI tests and pinned dependencies. The code is final and only paths may change.
+- [x] Sort the 95 images of docs/images/test/ by topic, rename them, drop duplicates and show them in the READMEs.
+- [x] Publish the 4 edited demo videos as release assets with GIF previews in docs/videos/, and sort the local video/ folder.

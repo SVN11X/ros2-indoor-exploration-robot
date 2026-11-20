@@ -14,6 +14,19 @@ Código que corre en el Arduino Nano y scripts que sintonizan su control de velo
 - La interfaz de hardware de ROS 2 que habla con este firmware (`src/third_party/diffdrive_arduino/`).
 - Pruebas de la tesis (van en `experiments/`).
 
+## Resultados de la sintonización
+
+Gráficos que generan los scripts de `pid_config/`. Cada script guarda su gráfico con el nombre que aparece aquí, así que no se renombran.
+
+| | |
+| --- | --- |
+| <img src="pid_config/respuesta_escalon_lazo_abierto.png" width="360" alt="Respuesta al escalón en lazo abierto"> | <img src="pid_config/identificacion_y_sintonizacion_pso.png" width="360" alt="Identificación FOPDT y sintonización PSO"> |
+| Respuesta al escalón en lazo abierto (PWM 143) de cada rueda. `ControlLazoAbierto.py` | Identificación FOPDT en lazo abierto y control PID simulado con las ganancias de PSO. `SintonizacionAutomatica.py` |
+| <img src="pid_config/comparacion_pso_vs_lambda.png" width="360" alt="Comparación PSO y Lambda"> | <img src="pid_config/respuesta_escalon_final_pso.png" width="360" alt="Respuesta al escalón con ganancias PSO"> |
+| Comparación entre la sintonía PSO y la sintonía Lambda (λ = 3τ). `SintonizacionLambda.py` | Respuesta al escalón de 0,13 m/s en lazo cerrado, corrida `pso`. `ControlLazoCerrado.py` |
+
+Otras corridas de `ControlLazoCerrado.py` a 0,13 m/s: [mvp](pid_config/respuesta_escalon_final_mvp.png), y [error_3](pid_config/respuesta_escalon_final_error_3.png) y [error_4](pid_config/respuesta_escalon_final_error_4.png), con oscilación en la rueda izquierda.
+
 ## Notas del firmware original
 
 Texto de Josh Newans, autor de la bifurcación de la que viene este firmware ([joshnewans/ros_arduino_bridge](https://github.com/joshnewans/ros_arduino_bridge)). Las ganancias y constantes físicas de este robot están en la sección 4.4 de la tesis.
