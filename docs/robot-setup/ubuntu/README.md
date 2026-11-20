@@ -10,6 +10,7 @@ Para la ejecución del procedimiento, se requiere la obtención de los siguiente
 
 * **Imagen ISO de Ubuntu 20.04:**
   [https://releases.ubuntu.com/focal/ubuntu-20.04.6-desktop-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-desktop-amd64.iso)
+  <img src="images/ubuntu-download-page.png" width="420" alt="Página de descarga de Ubuntu 20.04">
 * **Herramienta de creación de medios (Rufus):**
   [https://rufus.ie/en/](https://rufus.ie/en/)
 
@@ -19,7 +20,7 @@ Para la ejecución del procedimiento, se requiere la obtención de los siguiente
 
 Se procedió a conectar una unidad de almacenamiento USB con capacidad superior a 4 GB. Posteriormente, se ejecutó el software Rufus y se establecieron los parámetros de configuración según se muestra en la evidencia adjunta:
 
-![Configuración Establecida en Rufus](imag/rufus_config.png)
+![Configuración Establecida en Rufus](images/rufus-settings.png)
 
 **Detalle de la configuración aplicada:**
 

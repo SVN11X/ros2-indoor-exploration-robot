@@ -6,6 +6,13 @@ ROS 2 workspace of an Electronic Civil Engineering thesis at Universidad Tecnol√
 
 **Status:** finished. Code and data match the final version of the thesis.
 
+<p align="center">
+  <img src="images/robot/robot-side.jpg" height="270" alt="Side view of the robot">
+  <a href="https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/download/demo-videos/2026-02-10-exploration-modular-arena.mp4"><img src="videos/2026-02-10-exploration-modular-arena.gif" height="270" alt="The robot explores the modular test arena"></a>
+</p>
+
+<p align="center"><em>The prototype and an autonomous exploration in the modular test arena. Click the animation to watch the full video.</em></p>
+
 ## What it does
 
 - 2D mapping with SLAM Toolbox and an RPLidar A1.
@@ -84,6 +91,12 @@ bash ~/tesis_black_robot/scripts/launch/launch_mapeo_all.sh
 ```
 
 Each thesis experiment lives in `experiments/` with its `run_*.sh` script. The full flow is explained in [how-it-works.md](how-it-works.md).
+
+## Images and videos
+
+- [images/](images/README.en.md): photos of the robot and the experiments, and screenshots of the simulation and the real robot.
+- [videos/](videos/README.en.md): previews of 4 demos of the real robot, with a link to each full video.
+- Result plots stay next to each experiment in [experiments/](../experiments/README.en.md) and in [firmware/](../firmware/README.en.md).
 
 ## Documentation
 

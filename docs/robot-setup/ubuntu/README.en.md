@@ -10,6 +10,7 @@ The procedure requires the following downloads:
 
 * **Ubuntu 20.04 ISO image:**
   [https://releases.ubuntu.com/focal/ubuntu-20.04.6-desktop-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-desktop-amd64.iso)
+  <img src="images/ubuntu-download-page.png" width="420" alt="Ubuntu 20.04 download page">
 * **Media creation tool (Rufus):**
   [https://rufus.ie/en/](https://rufus.ie/en/)
 
@@ -19,7 +20,7 @@ The procedure requires the following downloads:
 
 A USB drive larger than 4 GB was connected. Rufus was then run with the settings shown in the attached screenshot:
 
-![Settings used in Rufus](imag/rufus_config.png)
+![Settings used in Rufus](images/rufus-settings.png)
 
 **Settings applied:**
 

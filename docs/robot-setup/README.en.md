@@ -2,9 +2,7 @@
 
 Spanish version: [README.md](README.md)
 
-This document explains how to set up credentials, clone the private repository, and the workflow to pull or push changes.
-
-> 🔒 **IMPORTANT:** Since this is a private repository, your usual GitHub password **WILL NOT work**. You must use a **Personal Access Token**.
+This document explains how to install Git, clone the repository, and the workflow to pull or push changes.
 
 ---
 
@@ -16,48 +14,30 @@ If Git is not installed:
 
 ---
 
-## 🔑 2. Generate your Access Token (Required)
+## ⚙️ 2. Set Your Identity
 
-You need a "special password" for the terminal:
-
-1.  Go to your GitHub account > **Settings** > **Developer settings**.
-2.  Select **Personal access tokens** > **Tokens (classic)**.
-3.  Click **Generate new token (classic)**.
-4.  Under "Scopes", check the **`repo`** box (full control of private repositories).
-5.  **COPY** that long code (it starts with `ghp_...`). *Keep it safe.*
-
----
-
-## 🔐 3. Credential Setup
-
-Set up Git so it remembers your token.
-
-### 🪟 On Windows
-Windows usually uses the "Credential Manager". When you clone or push, if a pop-up window appears, choose **"Token"** and paste your `ghp_...` code.
-
-### 🐧 On Ubuntu (Linux)
-Run this in the terminal to save your details so you do not have to type them every time:
+Git stores your name and email in every commit. Run this once:
 
 ```bash
 git config --global user.name "TuUsuarioGitHub"
 git config --global user.email "tu_email@ejemplo.com"
-git config --global credential.helper store
 ```
 
 ---
 
-## 🚀 4. Clone the Repository (First time)
+## 🚀 3. Clone the Repository (First time)
+
+The repository is public, so cloning it asks for no credentials. Install Git LFS first, because the large mapping session files live there. The scripts expect the repository in `~/tesis_black_robot`:
 
 ```bash
-git clone https://github.com/SVN11X/tesis_black_robot.git
+sudo apt install git-lfs
+git lfs install
+git clone https://github.com/SVN11X/ros2-indoor-exploration-robot.git ~/tesis_black_robot
 ```
-
-* **Username:** Your username.
-* **Password:** Paste your **Token** (on Linux no asterisks appear when you paste, that is normal).
 
 ---
 
-## 🔄 5. Daily Workflow
+## 🔄 4. Daily Workflow
 
 These are the commands you will use every time you work on the project. They work the same on Windows and Ubuntu.
 

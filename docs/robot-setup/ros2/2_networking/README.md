@@ -8,13 +8,22 @@ Este documento describe el procedimiento técnico para configurar una red dedica
 
 El siguiente diagrama ilustra la arquitectura de conexión y las direcciones IP estáticas definidas para este proyecto:
 
-![Topologia de red](imag/topologia_red.png)
+![Topologia de red](images/network-topology.png)
 
 
 ## Requisitos Previos
 
 * **Hardware:** Ordenador del robot (ej. Raspberry Pi), Router dedicado (Travel Router) y Ordenador de control (PC).
 * **Software:** Ubuntu 20.04 (o superior).
+
+## 0. Preparación del router
+
+El router dedicado es un GL.iNet GL-MT300N-V2. Se configura desde su panel web.
+
+| | | |
+| --- | --- | --- |
+| <img src="images/router-admin-password.png" width="260" alt="Contraseña de administrador del router"> | <img src="images/router-dashboard.png" width="260" alt="Panel principal del router"> | <img src="images/router-wireless-settings.png" width="260" alt="Ajustes inalámbricos del router"> |
+| Primer ingreso: definir la contraseña de administrador. | Panel principal. El puerto WAN no tiene cable, así que la red no tiene salida a internet. | Red Wi-Fi de 2,4 GHz con seguridad WPA2-PSK. |
 
 ## 1. Identificación de Interfaces de Red
 
@@ -87,6 +96,23 @@ Para que la configuración surta efecto, ejecute los siguientes comandos en la t
 sudo netplan generate
 sudo netplan apply
 ```
+
+### 2.4. Verificación
+
+Desde el PC, el router debe responder:
+
+<img src="images/ping-test.png" width="420" alt="Prueba de ping al router">
+
+`ping 192.168.8.1` responde sin pérdidas. `ping 8.8.8.8` falla porque la red no tiene salida a internet, y eso es lo esperado.
+
+### 2.5. Alternativa: conexión Wi-Fi del PC
+
+El PC también puede unirse a la red del router por Wi-Fi desde la configuración gráfica de Ubuntu:
+
+| | |
+| --- | --- |
+| <img src="images/pc-ipv4-settings.png" width="320" alt="Ajustes IPv4 de la conexión Wi-Fi"> | <img src="images/pc-ipv6-settings.png" width="320" alt="Ajustes IPv6 de la conexión Wi-Fi"> |
+| IPv4 automático (DHCP). | IPv6 solo de enlace local. |
 
 ## 3. Configuración de Acceso Remoto (SSH)
 

@@ -8,13 +8,22 @@ This document describes how to set up a dedicated network between a workstation 
 
 The following diagram shows the connection layout and the static IP addresses defined for this project:
 
-![Network topology](imag/topologia_red.png)
+![Network topology](images/network-topology.png)
 
 
 ## Prerequisites
 
 * **Hardware:** Robot computer (e.g. Raspberry Pi), dedicated router (Travel Router) and control computer (PC).
 * **Software:** Ubuntu 20.04 (or later).
+
+## 0. Router Setup
+
+The dedicated router is a GL.iNet GL-MT300N-V2. It is set up from its web panel.
+
+| | | |
+| --- | --- | --- |
+| <img src="images/router-admin-password.png" width="260" alt="Router admin password"> | <img src="images/router-dashboard.png" width="260" alt="Router dashboard"> | <img src="images/router-wireless-settings.png" width="260" alt="Router wireless settings"> |
+| First login: set the admin password. | Dashboard. The WAN port has no cable, so the network has no internet access. | 2.4 GHz Wi-Fi network with WPA2-PSK security. |
 
 ## 1. Identify the Network Interfaces
 
@@ -87,6 +96,23 @@ To apply the settings, run the following commands in the terminal of each device
 sudo netplan generate
 sudo netplan apply
 ```
+
+### 2.4. Verification
+
+From the PC, the router must answer:
+
+<img src="images/ping-test.png" width="420" alt="Ping test to the router">
+
+`ping 192.168.8.1` answers with no loss. `ping 8.8.8.8` fails because the network has no internet access, which is expected.
+
+### 2.5. Alternative: PC over Wi-Fi
+
+The PC can also join the router network over Wi-Fi from the Ubuntu graphical settings:
+
+| | |
+| --- | --- |
+| <img src="images/pc-ipv4-settings.png" width="320" alt="IPv4 settings of the Wi-Fi connection"> | <img src="images/pc-ipv6-settings.png" width="320" alt="IPv6 settings of the Wi-Fi connection"> |
+| IPv4 automatic (DHCP). | IPv6 link-local only. |
 
 ## 3. Remote Access (SSH)
 
