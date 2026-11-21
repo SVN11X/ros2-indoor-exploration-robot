@@ -13,6 +13,10 @@ Workspace de ROS 2 del trabajo de titulación de Ingeniería Civil Electrónica 
 
 <p align="center"><em>El prototipo y una exploración autónoma en la arena modular de pruebas. Haz clic en la animación para ver el video completo.</em></p>
 
+<p align="center"><a href="https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/download/demo-videos/2026-09-20-thesis-summary.mp4"><img src="docs/videos/2026-09-20-thesis-summary.gif" width="480" alt="Resumen de la tesis en 60 segundos"></a></p>
+
+<p align="center"><em>La tesis en 60 segundos: objetivos, robot real y simulado, arquitectura, resultados y conclusiones. Haz clic para ver el video.</em></p>
+
 ## Qué hace
 
 - Mapeo 2D con SLAM Toolbox y un RPLidar A1.
@@ -115,7 +119,7 @@ Cada prueba de la tesis está en `experiments/` con su script `run_*.sh`. El flu
 ## Imágenes y videos
 
 - [docs/images/](docs/images/README.md): fotos del robot y de las pruebas, y capturas de la simulación y del robot real.
-- [docs/videos/](docs/videos/README.md): vistas previas de 4 demos del robot real, con enlace a cada video completo.
+- [docs/videos/](docs/videos/README.md): el resumen de la tesis en 60 segundos y vistas previas de 4 demos del robot real, con enlace a cada video completo.
 - [mechanical/](mechanical/README.md): modelos 3D del robot y de sus componentes, con imágenes y un visor 3D en GitHub.
 - Los gráficos de resultados están junto a cada prueba en [experiments/](experiments/README.md) y en [firmware/](firmware/README.md).
 
