@@ -36,6 +36,7 @@ Before configuring, find the logical name of the interfaces on each device.
     ip addr
     ```
 2.  Find the Wi-Fi interface (usually `wlan0`) on the robot and the Ethernet interface (`eth0` or similar) on the PC.
+3.  The name comes after the number of each block, for example `3: wlan0:`. The Raspberry Pi shows three: `lo` (internal), `eth0` (cable) and `wlan0` (Wi-Fi). The `inet` line shows its current IP, which changes in step 2.
 
 ## 2. Static IP with Netplan
 
@@ -50,6 +51,10 @@ sudo pluma /etc/netplan/02-my-network-config.yaml
 ```
 
 *(Note: You can use `nano` or `vim` if `pluma` is not installed).*
+
+The folder already has `01-network-manager-all.yaml`, which comes with Ubuntu. That file is not changed: the settings go in the new file, next to it, and Netplan reads both.
+
+<img src="images/netplan-folder.png" width="420" alt="The /etc/netplan folder with the Ubuntu file and the name of the new file">
 
 ### 2.2. YAML Definition
 
