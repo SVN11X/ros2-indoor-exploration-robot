@@ -1,0 +1,3 @@
+# Clones and pulls skip the CAD models. mechanical/README.md shows how to download them.
+[lfs]
+	fetchexclude = mechanical/**

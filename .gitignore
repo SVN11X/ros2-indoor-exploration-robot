@@ -59,3 +59,6 @@ coverage/
 
 # Installers and executables stay out of git.
 *.exe
+
+# Office lock files
+~$*

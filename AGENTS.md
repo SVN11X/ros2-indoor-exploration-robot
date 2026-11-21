@@ -51,6 +51,7 @@ If the task contradicts the goals or a decision, treat it as red and say so.
 - `docs/`: goals, glossary, assumptions, decisions and specs.
 - `firmware/`: extra folder declared in .standard.yml. Arduino Nano sketch (ROSArduinoBridge) and the PID tuning scripts that talk to it. Not a ROS 2 package, so it lives outside src/.
 - `experiments/`: extra folder declared in .standard.yml. Field and simulation experiments of the thesis, with their scripts and recorded results. They need the robot or Gazebo, so they are not automated tests.
+- `mechanical/`: extra folder declared in .standard.yml. 3D models of the robot and its parts, with Fusion 360 sources, STEP exports and light STL copies for the GitHub 3D viewer. The software profile has no folder for CAD, and the hardware profile names this folder mechanical.
 - Files created by the official tool of a language or framework are allowed where the tool puts them. Declare any other top-level folder in .standard.yml under extra_folders, with a reason.
 
 ## Fixed rules
