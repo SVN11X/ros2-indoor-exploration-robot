@@ -12,6 +12,7 @@ experiments/sesiones_mapeo/**/RESUMEN_iteracion_0[13456].txt -text
 *.avif binary
 *.ico binary
 *.pdf binary
+*.pptx binary
 *.zip binary
 *.woff binary
 *.woff2 binary
