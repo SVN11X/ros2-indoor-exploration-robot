@@ -7,7 +7,7 @@ ROS 2 workspace of an Electronic Civil Engineering thesis at Universidad Tecnol√
 **Status:** finished. Code and data match the final version of the thesis.
 
 <p align="center">
-  <img src="images/robot/robot-side.jpg" height="270" alt="Side view of the robot">
+  <img src="images/robot/robot-right-side-close.jpg" height="270" alt="Side view of the robot">
   <a href="https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/download/demo-videos/2026-02-10-exploration-modular-arena.mp4"><img src="videos/2026-02-10-exploration-modular-arena.gif" height="270" alt="The robot explores the modular test arena"></a>
 </p>
 
@@ -23,6 +23,10 @@ ROS 2 workspace of an Electronic Civil Engineering thesis at Universidad Tecnol√
 
 Main thesis results: mean odometry error of 3.63 % on straight paths, valid maps in 5 of 6 explorations, and a mean distance of 3.4 cm between the maps and the measured floor plan.
 
+<p align="center"><img src="images/diagrams/digital-twin-sync.png" width="640" alt="The digital model takes the measurements of the real robot and Gazebo, ros2_control and Nav2 use it"></p>
+
+<p align="center"><em>The digital twin: the URDF and xacro model takes the verified measurements of the real robot (wheel separation and diameter, laser height), and Gazebo, ros2_control and Nav2 with SLAM use that same model.</em></p>
+
 ## Hardware
 
 Raspberry Pi 4, Arduino Nano, L298N driver, two DC motors with quadrature encoders, a caster wheel and an RPLidar A1. The chassis and the covers are 3D printed in PLA+.
@@ -30,6 +34,13 @@ Raspberry Pi 4, Arduino Nano, L298N driver, two DC motors with quadrature encode
 <p align="center"><a href="../mechanical/README.en.md"><img src="images/mechanical/robot-v2-inside.png" width="480" alt="3D model of the robot with its parts numbered"></a></p>
 
 <p align="center"><em>1 RPLidar A1, 2 Raspberry Pi Camera v2.1 (not used in the thesis), 3 Arduino Nano, 4 terminal adapter, 5 standoffs and 6 L298N driver. The 3D models of the robot and of each part are in <a href="../mechanical/README.en.md">mechanical/</a>.</em></p>
+
+|  |  |
+| --- | --- |
+| <img src="images/diagrams/wiring-diagram.png" width="360" alt="Wiring diagram of the robot"> | <img src="images/diagrams/power-budget.png" width="360" alt="Power use of each part"> |
+| Power and data connections, drawn in Fritzing. | Continuous and peak power of each part. The motors dominate the peak of the 12 V rail. |
+
+Photos of each part are in [images/](images/README.en.md#parts).
 
 ## Software
 
@@ -55,6 +66,10 @@ Ubuntu 20.04 LTS, ROS 2 Foxy and Gazebo Classic 11. The combination was frozen a
 The thesis cites paths as they were before this layout, for example `src/test/...`. The mapping table is in [thesis-paths.md](thesis-paths.md).
 
 ## Installation
+
+<p align="center"><img src="images/diagrams/workspace-folders.png" width="520" alt="The repository is cloned on the workstation and on the robot"></p>
+
+The repository starts from the robot package template by joshnewans and is cloned twice: on the PC (workstation) and on the robot's Raspberry Pi.
 
 1. Install Ubuntu 20.04 and ROS 2 Foxy with the guides in [robot-setup/](robot-setup/README.md).
 2. Install Git LFS before cloning, because the large mapping session files live there:
