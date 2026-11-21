@@ -60,7 +60,7 @@ Los modelos que también tienen un `.f3d` lo guardan junto al `.step`, con el mi
 ## Ver y descargar
 
 - Ver en 3D: GitHub abre los archivos `.stl` en un visor donde se puede girar, mover y acercar el modelo. Abre [robot-v2.stl](robot/robot-v2.stl) o [robot-v1.stl](robot/robot-v1.stl). La copia de v2 tiene la malla simplificada a 90 000 triángulos para que GitHub la pueda mostrar.
-- Descargar todo: los archivos `.step`, `.f3d`, `.f3z`, `.blend` y `.glb` están en Git LFS, que guarda los archivos grandes fuera del historial. `.lfsconfig` hace que un clone o un pull no los descargue, así la Raspberry no baja 175 MB que no usa. En tu disco aparecen como archivos de texto pequeños hasta que ejecutas, desde la carpeta del repositorio:
+- Descargar todo: los archivos `.step`, `.f3d`, `.f3z`, `.blend` y `.glb` están en Git LFS, que guarda los archivos grandes fuera del historial. `.lfsconfig` hace que un clone o un pull no los descargue, así la Raspberry no baja 190 MB que no usa. En tu disco aparecen como archivos de texto pequeños hasta que ejecutas, desde la carpeta del repositorio:
 
   ```bash
   git lfs pull --include="mechanical/**" --exclude=""

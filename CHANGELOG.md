@@ -4,6 +4,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
+### Added
+
+- 3D models of the built robot (v2), its first chassis design (v1) and 11 parts in `mechanical/`, with renders in the READMEs and STL copies that GitHub shows in 3D. A clone or pull skips the CAD files. `git lfs pull --include="mechanical/**" --exclude=""` downloads them.
+
 ### Changed
 
 - `src/` holds only ROS 2 packages. The firmware is in `firmware/`, the launch scripts in `scripts/launch/`, the Raspberry Pi setup scripts in `scripts/robot-setup/` and the thesis experiments in `experiments/`. `docs/thesis-paths.md` maps the old paths the thesis cites.

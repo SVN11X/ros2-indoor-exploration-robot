@@ -26,6 +26,7 @@ The simulation follows the same steps with `scripts/launch/launch_sim_all.sh`, w
 - `src/third_party/`: packages that come from other projects. `diffdrive_arduino` (hardware interface), `gazebo_ros2_control` (simulation backend), `m-explore-ros2` (frontier explorer), `serial` (serial port library) and `joy_tester`. The thesis adapted `diffdrive_arduino` and `m-explore-ros2` for this robot. Origins and licenses are in `docs/credits.md`.
 - `firmware/ROSArduinoBridge/`: the Arduino Nano firmware.
 - `firmware/pid_config/`: PID identification and tuning with PSO and Lambda, and the stability analysis.
+- `mechanical/`: 3D models of the built robot, its first chassis design and its parts.
 - `scripts/launch/`: full start of the robot, the simulation and the mapping sessions.
 - `scripts/robot-setup/`: Raspberry Pi diagnostics and tuning.
 - `experiments/`: thesis experiments, their scripts and recorded results.

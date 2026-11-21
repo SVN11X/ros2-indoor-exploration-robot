@@ -12,3 +12,12 @@ Code in this repository that comes from other projects. Origins follow table A3.
 | `src/third_party/joy_tester/` | Josh Newans, joy_tester | Apache 2.0 (LICENSE) | None recorded |
 | `src/serial_motor_demo/` | [joshnewans/serial_motor_demo](https://github.com/joshnewans/serial_motor_demo) | Not declared in package.xml | None recorded |
 | `firmware/ROSArduinoBridge/` | [joshnewans/ros_arduino_bridge](https://github.com/joshnewans/ros_arduino_bridge) (Newans, 2022b), fork of [hbrobotics/ros_arduino_bridge](https://github.com/hbrobotics/ros_arduino_bridge) | BSD (source header) | Gains and physical constants for this robot, per thesis section 4.4 |
+
+## 3D models
+
+The MIT license in `LICENSE` does not cover the third-party models below. The owner did not record where the part models were downloaded.
+
+| Path | Origin | License |
+| --- | --- | --- |
+| `mechanical/robot/` | The author's design. The chassis takes as reference the [Vacuum Robot](https://www.thingiverse.com/thing:4459513) by marcuslanzoni (2020) on Thingiverse, per thesis section 4.1.1. The v2 model includes five of the part models below. | Vacuum Robot: not recorded. Thingiverse refused an automated check on 2026-11-21 |
+| `mechanical/components/` | 11 third-party part models. Source not recorded | Not recorded |
