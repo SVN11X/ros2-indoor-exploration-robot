@@ -84,4 +84,4 @@ kebab-case en inglés con el nombre del producto, por ejemplo `l298n-motor-drive
 
 ## Origen y licencia
 
-El chasis está basado en el Vacuum Robot de marcuslanzoni, y el modelo v2 incluye modelos de terceros (LIDAR, cámara, Nano, placa de bornes y L298N). Los modelos de `components/` también son de terceros. La licencia MIT del repositorio no cubre lo que viene de terceros. El origen y la licencia de cada uno están en [docs/credits.md](../docs/credits.md).
+El chasis y las cubiertas de `robot/` son un diseño propio del autor, hecho desde cero, y los cubre la licencia MIT del repositorio. El Vacuum Robot de marcuslanzoni, con licencia CC BY-NC, fue solo una referencia, y ningún archivo suyo está en el repositorio. El modelo v2 incluye modelos de terceros (LIDAR, cámara, Nano, placa de bornes y L298N), y los modelos de `components/` también son de terceros. La licencia MIT no cubre lo que viene de terceros. El origen y la licencia de cada uno están en [docs/credits.md](../docs/credits.md).

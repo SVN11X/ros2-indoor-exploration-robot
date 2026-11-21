@@ -84,4 +84,4 @@ kebab-case in English with the product name, for example `l298n-motor-driver.ste
 
 ## Origin and license
 
-The chassis is based on the Vacuum Robot by marcuslanzoni, and the v2 model includes third-party models (LIDAR, camera, Nano, terminal adapter and L298N). The models in `components/` are third-party too. The MIT license of the repository does not cover what comes from third parties. The origin and license of each one are in [docs/credits.md](../docs/credits.md).
+The chassis and covers in `robot/` are the author's own design, made from scratch, and the MIT license of the repository covers them. The Vacuum Robot by marcuslanzoni, licensed CC BY-NC, was a reference only, and none of its files are in the repository. The v2 model includes third-party models (LIDAR, camera, Nano, terminal adapter and L298N), and the models in `components/` are third-party too. The MIT license does not cover what comes from third parties. The origin and license of each one are in [docs/credits.md](../docs/credits.md).

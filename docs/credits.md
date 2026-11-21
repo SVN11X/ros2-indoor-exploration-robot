@@ -19,5 +19,5 @@ The MIT license in `LICENSE` does not cover the third-party models below. The ow
 
 | Path | Origin | License |
 | --- | --- | --- |
-| `mechanical/robot/` | The author's design. The chassis takes as reference the [Vacuum Robot](https://www.thingiverse.com/thing:4459513) by marcuslanzoni (2020) on Thingiverse, per thesis section 4.1.1. The v2 model includes five of the part models below. | Vacuum Robot: not recorded. Thingiverse refused an automated check on 2026-11-21 |
+| `mechanical/robot/` | The author's design, made from scratch. The [Vacuum Robot](https://www.thingiverse.com/thing:4459513) by marcuslanzoni (2020) on Thingiverse was a reference only, per thesis section 4.1.1 and the owner. No file of it is in this repository. The v2 model includes five of the part models below. | Chassis and covers: MIT (`LICENSE`). Vacuum Robot: Creative Commons Attribution-NonCommercial (CC BY-NC), as its Thingiverse page shows, copied by the owner on 2026-11-21 |
 | `mechanical/components/` | 11 third-party part models. Source not recorded | Not recorded |
