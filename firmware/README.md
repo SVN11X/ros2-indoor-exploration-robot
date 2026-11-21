@@ -14,6 +14,12 @@ Código que corre en el Arduino Nano y scripts que sintonizan su control de velo
 - La interfaz de hardware de ROS 2 que habla con este firmware (`src/third_party/diffdrive_arduino/`).
 - Pruebas de la tesis (van en `experiments/`).
 
+## Hardware que controla
+
+<img src="../docs/images/mechanical/motor-control-stack.png" width="320" alt="Arduino Nano sobre la placa de bornes, sostenida con separadores sobre el driver L298N">
+
+En el modelo 3D del robot, el Arduino Nano (3) va sobre una placa de bornes (4), que se sostiene con separadores (5) sobre el driver L298N (6). El firmware lee los encoders de los motores, calcula la velocidad de cada rueda y envía al L298N las señales PWM. Los números son los mismos de [mechanical/](../mechanical/README.md).
+
 ## Resultados de la sintonización
 
 Gráficos que generan los scripts de `pid_config/`. Cada script guarda su gráfico con el nombre que aparece aquí, así que no se renombran.

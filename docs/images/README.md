@@ -10,6 +10,7 @@ Fotos y capturas del proyecto, ordenadas por tema. Los gráficos de resultados n
 - `field-tests/`: fotos de las pruebas en el robot real.
 - `simulation/`: Gazebo y RViz con el gemelo digital.
 - `real-robot/`: RViz durante el mapeo y la navegación del robot real.
+- `mechanical/`: imágenes de los modelos 3D de `mechanical/`, generadas desde sus archivos STEP.
 
 Las capturas de las guías de instalación van junto a su guía, en `docs/robot-setup/`.
 
@@ -25,6 +26,19 @@ kebab-case en inglés, describiendo lo que se ve. Si hay varias del mismo tipo, 
 | Vista frontal, con la cámara al centro y el LIDAR arriba. | Vista diagonal. |
 | <img src="robot/robot-side.jpg" width="200" alt="Vista lateral del robot"> | <img src="robot/robot-top.jpg" width="200" alt="Vista superior del robot"> |
 | Vista lateral. | Vista superior, con el LIDAR y el medidor de voltaje, corriente y potencia. |
+
+## Modelos 3D
+
+Los modelos están en [mechanical/](../../mechanical/README.md). Las imágenes con componentes usan los mismos números.
+
+| | |
+| --- | --- |
+| <img src="mechanical/robot-v2.png" width="200" alt="Modelo 3D del robot construido"> | <img src="mechanical/robot-v2-inside.png" width="200" alt="Interior del modelo 3D con los componentes numerados"> |
+| El robot construido (v2). | El interior de v2 con los componentes numerados. |
+| <img src="mechanical/robot-v1.png" width="200" alt="Primer diseño del chasis"> | <img src="mechanical/motor-control-stack.png" width="200" alt="Arduino Nano, placa de bornes y driver L298N"> |
+| Primer diseño del chasis (v1). | El Arduino Nano, su placa de bornes y el driver L298N. |
+| <img src="mechanical/components.png" width="200" alt="Los 11 modelos de componentes"> | |
+| Los 11 modelos de componentes, con el nombre de su archivo. | |
 
 ## Pruebas de campo
 

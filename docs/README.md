@@ -12,7 +12,7 @@ Documentación del proyecto, para personas y herramientas de IA.
 - `credits.md`: origen y licencia de los paquetes de terceros.
 - `overview.en.md`: versión en inglés del `README.md` de la raíz.
 - `robot-setup/`: guías de instalación de Ubuntu, ROS 2, la red y la exploración.
-- `images/`: fotos del robot y de las pruebas, y capturas de la simulación y del robot real, ordenadas por tema.
+- `images/`: fotos del robot y de las pruebas, capturas de la simulación y del robot real, e imágenes de los modelos 3D, ordenadas por tema.
 - `videos/`: vistas previas de los demos. Los videos completos están en el release `demo-videos` de GitHub.
 - `costs/`: planillas de costos del prototipo.
 - `glossary.md`, `assumptions.md`, `decisions/`, `specs/` e `improvement-plan.md`: archivos del estándar de repositorios.
@@ -21,6 +21,7 @@ Documentación del proyecto, para personas y herramientas de IA.
 
 - Código y scripts (van en `src/`, `firmware/`, `scripts/` o `experiments/`).
 - Resultados de las pruebas (van junto a cada prueba en `experiments/`).
+- Modelos 3D (van en `mechanical/`).
 
 ## Nombres
 

@@ -25,7 +25,11 @@ Resultados principales de la tesis: error medio de odometría de 3,63 % en líne
 
 ## Hardware
 
-Raspberry Pi 4, Arduino Nano, driver L298N, dos motores DC con encoders de cuadratura, rueda loca y RPLidar A1.
+Raspberry Pi 4, Arduino Nano, driver L298N, dos motores DC con encoders de cuadratura, rueda loca y RPLidar A1. El chasis y las cubiertas están impresos en 3D con PLA+.
+
+<p align="center"><a href="mechanical/README.md"><img src="docs/images/mechanical/robot-v2-inside.png" width="480" alt="Modelo 3D del robot con sus componentes numerados"></a></p>
+
+<p align="center"><em>1 RPLidar A1, 2 cámara Raspberry Pi v2.1 (la tesis no la usa), 3 Arduino Nano, 4 placa de bornes, 5 separadores y 6 driver L298N. Los modelos 3D del robot y de cada componente están en <a href="mechanical/README.md">mechanical/</a>.</em></p>
 
 ## Software
 
@@ -40,6 +44,7 @@ Ubuntu 20.04 LTS, ROS 2 Foxy y Gazebo Classic 11. La combinación se congeló al
 │   ├── serial_motor_demo/
 │   └── third_party/      paquetes de otros proyectos
 ├── firmware/             firmware del Arduino Nano y sintonización del PID
+├── mechanical/           modelos 3D del robot y de sus componentes
 ├── scripts/
 │   ├── launch/           arranque del robot, la simulación y el mapeo
 │   └── robot-setup/      diagnóstico y ajustes de la Raspberry Pi
@@ -96,6 +101,7 @@ Cada prueba de la tesis está en `experiments/` con su script `run_*.sh`. El flu
 
 - [docs/images/](docs/images/README.md): fotos del robot y de las pruebas, y capturas de la simulación y del robot real.
 - [docs/videos/](docs/videos/README.md): vistas previas de 4 demos del robot real, con enlace a cada video completo.
+- [mechanical/](mechanical/README.md): modelos 3D del robot y de sus componentes, con imágenes y un visor 3D en GitHub.
 - Los gráficos de resultados están junto a cada prueba en [experiments/](experiments/README.md) y en [firmware/](firmware/README.md).
 
 ## Documentación

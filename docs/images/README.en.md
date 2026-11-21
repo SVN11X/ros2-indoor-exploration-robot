@@ -10,6 +10,7 @@ Photos and screenshots of the project, sorted by topic. Result plots are not her
 - `field-tests/`: photos of the experiments on the real robot.
 - `simulation/`: Gazebo and RViz with the digital twin.
 - `real-robot/`: RViz during mapping and navigation on the real robot.
+- `mechanical/`: images of the 3D models in `mechanical/`, made from their STEP files.
 
 Screenshots of the installation guides stay next to their guide, in `docs/robot-setup/`.
 
@@ -25,6 +26,19 @@ kebab-case in English, describing what the image shows. When there are several o
 | Front view, with the camera in the middle and the LIDAR on top. | Diagonal view. |
 | <img src="robot/robot-side.jpg" width="200" alt="Side view of the robot"> | <img src="robot/robot-top.jpg" width="200" alt="Top view of the robot"> |
 | Side view. | Top view, with the LIDAR and the voltage, current and power meter. |
+
+## 3D models
+
+The models are in [mechanical/](../../mechanical/README.en.md). The images with parts use the same numbers.
+
+| | |
+| --- | --- |
+| <img src="mechanical/robot-v2.png" width="200" alt="3D model of the built robot"> | <img src="mechanical/robot-v2-inside.png" width="200" alt="Inside of the 3D model with the parts numbered"> |
+| The built robot (v2). | The inside of v2 with the parts numbered. |
+| <img src="mechanical/robot-v1.png" width="200" alt="First chassis design"> | <img src="mechanical/motor-control-stack.png" width="200" alt="Arduino Nano, terminal adapter and L298N driver"> |
+| First chassis design (v1). | The Arduino Nano, its terminal adapter and the L298N driver. |
+| <img src="mechanical/components.png" width="200" alt="The 11 part models"> | |
+| The 11 part models, with their file names. | |
 
 ## Field tests
 
