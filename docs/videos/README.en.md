@@ -2,7 +2,13 @@
 
 Spanish version: [README.md](README.md)
 
-Videos of the real robot. The full videos weigh between 119 and 642 MB, so they live in the [Demo videos](https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/tag/demo-videos) release and not in git. This folder keeps a 12 second preview of each one. Every video shows a phone camera next to RViz.
+The thesis summary and videos of the real robot. The full videos weigh between 55 and 642 MB, so they live in the [Demo videos](https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/tag/demo-videos) release and not in git. This folder keeps a 12 second preview of each one.
+
+## Thesis summary
+
+| Preview | What it shows |
+| --- | --- |
+| <img src="2026-09-20-thesis-summary.gif" width="360" alt="The thesis in 60 seconds"> | The thesis in 60 seconds, in Spanish: goals, real and simulated robot, architecture, results in the modular arena and conclusions. The preview shows all of it at 5 times its speed. [Full video (1 min, 4K)](https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/download/demo-videos/2026-09-20-thesis-summary.mp4) |
 
 ## What goes here
 
@@ -14,6 +20,8 @@ Videos of the real robot. The full videos weigh between 119 and 642 MB, so they 
 `YYYY-MM-DD-what-it-shows.gif`, with the recording date.
 
 ## Demos
+
+Each demo shows a phone camera next to RViz.
 
 | Preview | What it shows |
 | --- | --- |

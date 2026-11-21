@@ -13,6 +13,10 @@ ROS 2 workspace of an Electronic Civil Engineering thesis at Universidad Tecnol√
 
 <p align="center"><em>The prototype and an autonomous exploration in the modular test arena. Click the animation to watch the full video.</em></p>
 
+<p align="center"><a href="https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/download/demo-videos/2026-09-20-thesis-summary.mp4"><img src="videos/2026-09-20-thesis-summary.gif" width="480" alt="The thesis in 60 seconds"></a></p>
+
+<p align="center"><em>The thesis in 60 seconds: goals, real and simulated robot, architecture, results and conclusions. Click to watch the video, which is in Spanish.</em></p>
+
 ## What it does
 
 - 2D mapping with SLAM Toolbox and an RPLidar A1.
@@ -115,7 +119,7 @@ Each thesis experiment lives in `experiments/` with its `run_*.sh` script. The f
 ## Images and videos
 
 - [images/](images/README.en.md): photos of the robot and the experiments, and screenshots of the simulation and the real robot.
-- [videos/](videos/README.en.md): previews of 4 demos of the real robot, with a link to each full video.
+- [videos/](videos/README.en.md): the thesis in 60 seconds and previews of 4 demos of the real robot, with a link to each full video.
 - [mechanical/](../mechanical/README.en.md): 3D models of the robot and its parts, with images and a 3D viewer on GitHub.
 - Result plots stay next to each experiment in [experiments/](../experiments/README.en.md) and in [firmware/](../firmware/README.en.md).
 

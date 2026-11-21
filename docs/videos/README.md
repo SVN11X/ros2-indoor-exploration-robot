@@ -2,7 +2,13 @@
 
 Versión en inglés: [README.en.md](README.en.md)
 
-Videos del robot real. Los videos completos pesan entre 119 y 642 MB, así que están en el release [Demo videos](https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/tag/demo-videos) y no en git. Aquí queda una vista previa de 12 segundos de cada uno. Cada video muestra la cámara de un teléfono junto a RViz.
+El resumen de la tesis y videos del robot real. Los videos completos pesan entre 55 y 642 MB, así que están en el release [Demo videos](https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/tag/demo-videos) y no en git. Aquí queda una vista previa de 12 segundos de cada uno.
+
+## Resumen de la tesis
+
+| Vista previa | Qué muestra |
+| --- | --- |
+| <img src="2026-09-20-thesis-summary.gif" width="360" alt="Resumen de la tesis en 60 segundos"> | La tesis en 60 segundos: objetivos, robot real y simulado, arquitectura, resultados en la arena modular y conclusiones. La vista previa lo muestra completo a 5 veces su velocidad. [Video completo (1 min, 4K)](https://github.com/SVN11X/ros2-indoor-exploration-robot/releases/download/demo-videos/2026-09-20-thesis-summary.mp4) |
 
 ## Qué va aquí
 
@@ -14,6 +20,8 @@ Videos del robot real. Los videos completos pesan entre 119 y 642 MB, así que e
 `AAAA-MM-DD-que-muestra.gif`, con la fecha de la grabación.
 
 ## Demos
+
+Cada demo muestra la cámara de un teléfono junto a RViz.
 
 | Vista previa | Qué muestra |
 | --- | --- |
