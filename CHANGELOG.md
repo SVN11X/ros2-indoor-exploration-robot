@@ -6,6 +6,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 
+- The thesis figures in `docs/images/`: diagrams with their source PowerPoint in `diagrams/`, photos of the parts in `components/`, Gazebo and RViz captures, Fusion 360 renders and new photos of the robot. The READMEs show them where they explain the robot, the firmware, the ROS 2 packages and the experiments. `docs/gantt-chart.pdf` holds the project schedule and `mechanical/robot/robot-v2-drawing.pdf` the drawing of the robot.
 - 3D models of the built robot (v2), its first chassis design (v1) and 11 parts in `mechanical/`, with renders in the READMEs and STL copies that GitHub shows in 3D. A clone or pull skips the CAD files. `git lfs pull --include="mechanical/**" --exclude=""` downloads them.
 
 ### Changed

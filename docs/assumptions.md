@@ -9,4 +9,4 @@ Things taken as true without confirmation. Review the open ones in every pull re
 | 2026-11-20 | `src/serial_motor_demo/` comes from joshnewans/serial_motor_demo, as its README and the firmware README suggest. | Claude Code | Order folders (PR #1) | open |
 | 2026-11-21 | `mechanical/robot/robot-v1` (formerly `Tesis.stp`) is a first chassis design that came before the built robot, because `robot-v2` matches the photos of the robot. | Claude Code | 3D models | open |
 | 2026-11-21 | `mechanical/components/rplidar-a1-mount.step` (formerly `RPLIDAR+A1M8.stp`) is a mount for the LIDAR, judging by its shape. | Claude Code | 3D models | open |
-| 2026-11-21 | `mechanical/components/dfrobot-power-module.step` is the 25 W DC-DC buck module of thesis table A1.1. The README only states the two facts side by side. | Claude Code | 3D models | open |
+| 2026-11-21 | `mechanical/components/dfrobot-power-module.step` is the 25 W DC-DC buck module of thesis table A1.1. The README only states the two facts side by side. | Claude Code | 3D models | confirmed: `docs/images/diagrams/power-budget.png` names the buck module DFR0205 |

@@ -30,6 +30,12 @@ Desde la raíz del workspace, después de `colcon build` y con el robot o la sim
 bash experiments/prueba_giro/run_prueba_giro.sh
 ```
 
+## Validación del gemelo digital
+
+Antes de mapear, la simulación se revisa en 7 pasos: reloj, transformaciones, controladores, teleoperación, respuesta cinemática, sensor láser y paridad de las medidas de las ruedas entre los archivos del modelo, la configuración y el firmware. Cada paso tiene su acción correctiva si falla.
+
+<img src="../docs/images/diagrams/validation-flowchart.png" width="420" alt="Diagrama de la validación en 7 pasos">
+
 ## Resultados
 
 Gráficos que generan los scripts de cada prueba. Cada script guarda su gráfico con el nombre que aparece aquí, así que no se renombran.
@@ -44,6 +50,20 @@ Gráficos que generan los scripts de cada prueba. Cada script guarda su gráfico
 | Giro de 360° en el robot real: desviación de cada repetición, con criterio máximo de 10°. `prueba_giro/` | Giro de 360° en Gazebo: desviación de cada repetición, con criterio máximo de 5 %. `prueba_giro_sim/` |
 | <img src="linea_recta_sim/odom_error_barras_sim.png" width="360" alt="Trayectoria recta en Gazebo"> | |
 | Trayectoria recta de 2 m en Gazebo: desviación de cada repetición, con criterio máximo de 5 %. `linea_recta_sim/` | El resultado de la trayectoria recta en el robot real solo está en PDF: [linea_recta/odom_error_barras.pdf](linea_recta/odom_error_barras.pdf). |
+
+
+Las pruebas de odometría en Gazebo, en 3 momentos cada una:
+
+|  |  |  |
+| --- | --- | --- |
+| <img src="../docs/images/simulation/odometry-straight-1.png" width="240" alt="Trayectoria recta, 1"> | <img src="../docs/images/simulation/odometry-straight-2.png" width="240" alt="Trayectoria recta, 2"> | <img src="../docs/images/simulation/odometry-straight-3.png" width="240" alt="Trayectoria recta, 3"> |
+| Trayectoria recta, 1. | Trayectoria recta, 2. | Trayectoria recta, 3. |
+| <img src="../docs/images/simulation/odometry-l-path-1.png" width="240" alt="Trayectoria en L, 1"> | <img src="../docs/images/simulation/odometry-l-path-2.png" width="240" alt="Trayectoria en L, 2"> | <img src="../docs/images/simulation/odometry-l-path-3.png" width="240" alt="Trayectoria en L, 3"> |
+| Trayectoria en L, 1. | Trayectoria en L, 2. | Trayectoria en L, 3. |
+| <img src="../docs/images/simulation/odometry-turn-360-1.png" width="240" alt="Giro de 360°, 1"> | <img src="../docs/images/simulation/odometry-turn-360-2.png" width="240" alt="Giro de 360°, 2"> | <img src="../docs/images/simulation/odometry-turn-360-3.png" width="240" alt="Giro de 360°, 3"> |
+| Giro de 360°, 1. | Giro de 360°, 2. | Giro de 360°, 3. |
+| <img src="../docs/images/simulation/odometry-straight-world.png" width="240" alt="Mundo de la prueba recta"> | <img src="../docs/images/simulation/odometry-turn-world.png" width="240" alt="Mundo de la prueba de giro"> |  |
+| Mundo de Gazebo de la prueba recta. | Mundo de Gazebo de la prueba de giro. |  |
 
 ### Mapeo y exploración
 

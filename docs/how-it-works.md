@@ -53,6 +53,8 @@ bash scripts/launch/launch_sim_all.sh
 
 Real robot: `bash ~/robot_ws/scripts/launch/launch_robot_all.sh` on the Raspberry Pi, then `bash scripts/launch/launch_mapeo_all.sh` on the PC. The launch scripts wait for the `odom` to `base_link` and `base_link` to `laser_frame` transforms before they continue, which is the first proof that the robot works.
 
+`docs/images/diagrams/ros-graph.png` shows the nodes and topics of a running system, and `docs/images/diagrams/tf-tree-simulation.pdf` and `docs/images/diagrams/tf-tree-real-robot.pdf` show the transform tree to expect in each case.
+
 ## Not covered
 
 - Navigation to fixed goals set by an operator. `experiments/navegacion/run_prueba_nav.sh` is prepared but was not run (thesis annex 8).

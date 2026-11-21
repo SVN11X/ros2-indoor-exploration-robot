@@ -20,6 +20,19 @@ Código que corre en el Arduino Nano y scripts que sintonizan su control de velo
 
 En el modelo 3D del robot, el Arduino Nano (3) va sobre una placa de bornes (4), que se sostiene con separadores (5) sobre el driver L298N (6). El firmware lee los encoders de los motores, calcula la velocidad de cada rueda y envía al L298N las señales PWM. Los números son los mismos de [mechanical/](../mechanical/README.md).
 
+## Cómo funciona
+
+|  |  |
+| --- | --- |
+| <img src="../docs/images/diagrams/firmware-file-tree.png" width="360" alt="Archivos del sketch"> | <img src="../docs/images/diagrams/firmware-architecture.png" width="360" alt="Arquitectura del firmware y su enlace con la Raspberry Pi"> |
+| Archivos del sketch y qué hace cada uno. | La Raspberry Pi y el Arduino se comunican por USB serie a 57600 baud. El Arduino lee los encoders y controla los motores con el PID. |
+| <img src="../docs/images/diagrams/firmware-startup-sequence.png" width="360" alt="Secuencia de arranque"> | <img src="../docs/images/diagrams/firmware-control-sequence.png" width="360" alt="Secuencia de un ciclo de control"> |
+| Arranque: el Arduino carga las ganancias PSO, y el plugin DiffDriveArduino abre el puerto, comprueba el enlace y queda en STARTED. | Un ciclo de control en 10 pasos, desde la lectura de los encoders hasta el PWM de los motores. |
+| <img src="../docs/images/diagrams/ros2-control-unit-conversion.png" width="360" alt="Conversión de unidades"> | <img src="../docs/images/diagrams/encoder-quadrature-states.jpg" width="360" alt="Tabla de estados del encoder en cuadratura"> |
+| Conversión de unidades entre ros2_control (rad/s) y el Arduino (ticks por ciclo), con rads_per_count = 2π / 1980. | Estados de los canales A y B del encoder: cada transición suma 1, resta 1 o marca un error (E). |
+| <img src="../docs/images/components/motor-encoder-pinout.jpg" width="360" alt="Cables del motor con encoder"> |  |
+| Cables del motor con encoder: alimentación del motor y del sensor Hall, y canales A y B. |  |
+
 ## Resultados de la sintonización
 
 Gráficos que generan los scripts de `pid_config/`. Cada script guarda su gráfico con el nombre que aparece aquí, así que no se renombran.

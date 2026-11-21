@@ -20,6 +20,8 @@ El siguiente diagrama ilustra la arquitectura de conexión y las direcciones IP 
 
 El router dedicado es un GL.iNet GL-MT300N-V2. Se configura desde su panel web.
 
+<img src="../../../images/components/travel-router.png" width="140" alt="Router de viaje GL.iNet GL-MT300N-V2">
+
 | | | |
 | --- | --- | --- |
 | <img src="images/router-admin-password.png" width="260" alt="Contraseña de administrador del router"> | <img src="images/router-dashboard.png" width="260" alt="Panel principal del router"> | <img src="images/router-wireless-settings.png" width="260" alt="Ajustes inalámbricos del router"> |

@@ -10,7 +10,9 @@ Photos and screenshots of the project, sorted by topic. Result plots are not her
 - `field-tests/`: photos of the experiments on the real robot.
 - `simulation/`: Gazebo and RViz with the digital twin.
 - `real-robot/`: RViz during mapping and navigation on the real robot.
-- `mechanical/`: images of the 3D models in `mechanical/`, made from their STEP files.
+- `mechanical/`: images of the 3D models in `mechanical/`, made from their STEP files, and Fusion 360 renders.
+- `diagrams/`: thesis diagrams with their source PowerPoint, and the TF trees in PDF.
+- `components/`: photos of the parts, from stores or manufacturers.
 
 Screenshots of the installation guides stay next to their guide, in `docs/robot-setup/`.
 
@@ -26,6 +28,10 @@ kebab-case in English, describing what the image shows. When there are several o
 | Front view, with the camera in the middle and the LIDAR on top. | Diagonal view. |
 | <img src="robot/robot-side.jpg" width="200" alt="Side view of the robot"> | <img src="robot/robot-top.jpg" width="200" alt="Top view of the robot"> |
 | Side view. | Top view, with the LIDAR and the voltage, current and power meter. |
+| <img src="robot/robot-front-close.jpg" width="200" alt="Front view of the robot, closer"> | <img src="robot/robot-right-side-close.jpg" width="200" alt="Right side view of the robot"> |
+| Front view, closer. | Right side view, closer. |
+| <img src="robot/robot-front-right-close.png" width="200" alt="Front and right side view of the robot"> |  |
+| Front and right side view, closer. |  |
 
 ## 3D models
 
@@ -39,6 +45,10 @@ The models are in [mechanical/](../../mechanical/README.en.md). The images with 
 | First chassis design (v1). | The Arduino Nano, its terminal adapter and the L298N driver. |
 | <img src="mechanical/components.png" width="200" alt="The 11 part models"> | |
 | The 11 part models, with their file names. | |
+| <img src="mechanical/robot-v2-render-top-left-front.png" width="200" alt="Fusion 360 render of v2, top left view, front"> | <img src="mechanical/robot-v2-render-top-left-back.png" width="200" alt="Fusion 360 render of v2, top left view, back"> |
+| Fusion 360 render of v2. Top left view, front. | Fusion 360 render of v2. Top left view, back. |
+| <img src="mechanical/robot-v2-render-top-right.png" width="200" alt="Fusion 360 render of v2, top right view"> | <img src="mechanical/robot-v2-render-bottom-right.png" width="200" alt="Fusion 360 render of v2, bottom right view"> |
+| Fusion 360 render of v2. Top right view. | Fusion 360 render of v2. Bottom right view. |
 
 ## Field tests
 
@@ -69,6 +79,18 @@ Odometry tests on the real robot, on carpet, with tape as reference (March 25, 2
 | Start of frontier exploration. | Safety zone around the cylinders. |
 | <img src="simulation/exploration-costmap.png" width="360" alt="Costmap during exploration"> | <img src="simulation/exploration-map-overview.png" width="360" alt="Overview of the explored map"> |
 | Costmap during exploration. | Overview of the explored map. |
+| <img src="simulation/gazebo-scenario-overview.jpg" width="360" alt="Visual Gazebo scenario with people, posts and a numbered block"> | <img src="simulation/gazebo-scenario-close.jpg" width="360" alt="The same scenario, closer to the robot"> |
+| Visual Gazebo scenario with people, posts and a numbered block. | The same scenario, closer to the robot. |
+| <img src="simulation/gazebo-camera-view.jpg" width="360" alt="Field of view of the simulated camera"> | <img src="simulation/rviz-lidar-scan-obstacles.png" width="360" alt="Simulated LIDAR scan over the obstacles, in RViz"> |
+| Field of view of the simulated camera. | Simulated LIDAR scan over the obstacles, in RViz. |
+| <img src="simulation/rviz-costmap-scan.png" width="360" alt="Costmap and LIDAR scan in RViz"> | <img src="simulation/rviz-tf-frames.png" width="360" alt="Axes of the robot TF frames in RViz"> |
+| Costmap and LIDAR scan in RViz. | Axes of the robot TF frames in RViz. |
+| <img src="simulation/navigation-sample-1.png" width="360" alt="Navigation in simulation, Gazebo on the left and RViz on the right, moment 1"> | <img src="simulation/navigation-sample-2.png" width="360" alt="Moment 2"> |
+| Navigation in simulation, Gazebo on the left and RViz on the right, moment 1. | Moment 2. |
+| <img src="simulation/navigation-sample-3.png" width="360" alt="Moment 3"> |  |
+| Moment 3. |  |
+
+The odometry tests in Gazebo are in [experiments/](../../experiments/README.en.md#odometry).
 
 ## Real robot
 
@@ -86,3 +108,31 @@ Odometry tests on the real robot, on carpet, with tape as reference (March 25, 2
 | `ros2 topic hz /odom`: odometry is published at about 30 Hz. | |
 
 The videos of the experiments are in [docs/videos/](../videos/README.en.md).
+
+## Diagrams
+
+Thesis figures. Each PNG has its source PowerPoint next to it, with the same name and the `.pptx` extension. The README of each folder shows them where they explain something.
+
+- General: [digital twin](diagrams/digital-twin-sync.png), [repository on the PC and on the robot](diagrams/workspace-folders.png), [wiring](diagrams/wiring-diagram.png) and [power use](diagrams/power-budget.png).
+- Firmware: [files](diagrams/firmware-file-tree.png), [architecture](diagrams/firmware-architecture.png), [startup](diagrams/firmware-startup-sequence.png), [control cycle](diagrams/firmware-control-sequence.png), [unit conversion](diagrams/ros2-control-unit-conversion.png) and [encoder states](diagrams/encoder-quadrature-states.jpg).
+- ROS 2: [xacro files](diagrams/xacro-file-structure.png), [choice between the real robot and simulation](diagrams/xacro-decision-tree.png), [from xacro to /tf](diagrams/urdf-to-tf-flow.png), [startup order](diagrams/launch-startup-sequence.png), [differential control](diagrams/differential-control-flow.png), [Gazebo differential drive plugin](diagrams/gazebo-diff-drive-plugin.png), [Nav2 behavior tree](diagrams/nav2-behavior-tree.png) and [running nodes and topics](diagrams/ros-graph.png).
+- Validation: [digital twin validation](diagrams/validation-flowchart.png), and the TF trees of the [simulation](diagrams/tf-tree-simulation.pdf) and of the [real robot](diagrams/tf-tree-real-robot.pdf).
+
+Most have a transparent background and dark text, so they read best with the GitHub light theme.
+
+## Parts
+
+Photos from stores or manufacturers. Their source is not recorded, as `docs/credits.md` says.
+
+|  |  |  |
+| --- | --- | --- |
+| <img src="components/rplidar-a1m8.jpg" width="140" alt="RPLidar A1M8"> | <img src="components/arduino-nano.jpg" width="140" alt="Arduino Nano"> | <img src="components/l298n-driver.png" width="140" alt="L298N driver"> |
+| RPLidar A1M8 | Arduino Nano | L298N driver |
+| <img src="components/jga25-370-motor.jpg" width="140" alt="JGA25-370 gear motor"> | <img src="components/motor-encoder-pinout.jpg" width="140" alt="Wires of the motor with encoder"> | <img src="components/wheels.png" width="140" alt="Wheels"> |
+| JGA25-370 gear motor | Wires of the motor with encoder | Wheels |
+| <img src="components/ball-caster.png" width="140" alt="Caster wheel"> | <img src="components/battery.png" width="140" alt="12 V battery"> | <img src="components/dc-dc-power-module.jpg" width="140" alt="DFRobot DFR0205 DC-DC buck module"> |
+| Caster wheel | 12 V battery | DFRobot DFR0205 DC-DC buck module |
+| <img src="components/raspberry-pi-camera.jpg" width="140" alt="Raspberry Pi camera"> | <img src="components/power-switch.jpg" width="140" alt="Power switch"> | <img src="components/blade-fuse.jpg" width="140" alt="Blade fuse"> |
+| Raspberry Pi camera | Power switch | Blade fuse |
+| <img src="components/travel-router.png" width="140" alt="GL.iNet GL-MT300N-V2 travel router"> | <img src="components/pla-plus-filament.png" width="140" alt="PLA+ filament"> | <img src="components/ender-3-printer.jpg" width="140" alt="Ender 3 3D printer"> |
+| GL.iNet GL-MT300N-V2 travel router | PLA+ filament | Ender 3 3D printer |

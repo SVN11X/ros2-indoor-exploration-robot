@@ -20,6 +20,8 @@ The following diagram shows the connection layout and the static IP addresses de
 
 The dedicated router is a GL.iNet GL-MT300N-V2. It is set up from its web panel.
 
+<img src="../../../images/components/travel-router.png" width="140" alt="GL.iNet GL-MT300N-V2 travel router">
+
 | | | |
 | --- | --- | --- |
 | <img src="images/router-admin-password.png" width="260" alt="Router admin password"> | <img src="images/router-dashboard.png" width="260" alt="Router dashboard"> | <img src="images/router-wireless-settings.png" width="260" alt="Router wireless settings"> |

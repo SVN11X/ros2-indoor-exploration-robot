@@ -35,6 +35,17 @@ The v2 model does not include the Raspberry Pi 4 or the power module. Their mode
 
 Each version has its Fusion 360 file (`.f3d` or `.f3z`), its STEP export (`.step`) and a light STL copy to view it on GitHub.
 
+## Renders and drawing of v2
+
+|  |  |
+| --- | --- |
+| <img src="../docs/images/mechanical/robot-v2-render-top-left-front.png" width="300" alt="Top left view, front"> | <img src="../docs/images/mechanical/robot-v2-render-top-left-back.png" width="300" alt="Top left view, back"> |
+| Top left view, front. | Top left view, back. |
+| <img src="../docs/images/mechanical/robot-v2-render-top-right.png" width="300" alt="Top right view"> | <img src="../docs/images/mechanical/robot-v2-render-bottom-right.png" width="300" alt="Bottom right view"> |
+| Top right view. | Bottom right view. |
+
+Fusion 360 renders. The drawing with the robot's dimensions is in [robot/robot-v2-drawing.pdf](robot/robot-v2-drawing.pdf).
+
 ## Parts
 
 <img src="../docs/images/mechanical/components.png" alt="The 11 part models, with their file names">
@@ -70,7 +81,7 @@ The models that also have an `.f3d` file keep it next to the `.step`, with the s
 
 ## What goes here
 
-- `robot/`: the robot designs. Fusion 360 file, STEP export and light STL copy of each version.
+- `robot/`: the robot designs. Fusion 360 file, STEP export and light STL copy of each version, and the drawing of v2 in PDF.
 - `components/`: part models made by third parties.
 
 ## What does not go here
